@@ -1,7 +1,8 @@
 //in this copmpnent we make the buy strategy page
-import React, { useReact } from "react";
+import React, { useState } from "react";
 //icon
 import more from '../../assets/icon/more.svg';
+import less from '../../assets/icon/less.svg';
 //image
 import us from '../../assets/images/american-flag.jpg';
 import japan from '../../assets/images/japan-flag.jpg';
@@ -10,11 +11,41 @@ import chart1 from '../../assets/images/blue-chart.jpg';
 //link
 import applicant from '../../Applicant.json';
 import { MobileButton } from "../../components/mobile-component/button/MobileButton";
+import { MobileBottomNav } from "../../components/mobile-component/bottom-navbar/MobileBottomNav";
 
 export default function MobileBuyStrategy() {
+  const [moreBackTest, setMoreBackTest] = useState(false);
+  const [navChoose, setNavChoose] = useState({
+    watchlist: false,
+    filter: false,
+    home: true,
+    strategy: false,
+    signal: false
+  });
   let name = 'classic name1';
   let author = 'john copper';
-  const handleClick = () => { }
+  const handleClick = (e) => {
+    e.preventDefault();
+    const id = e.currentTarget.id;
+    if (id == 'moreBacktest' || id == 'lessBacktest') {
+      setMoreBackTest(!moreBackTest);
+    } else if (id == 'watchlist' || id == 'filter'
+      || id == 'home' || id == 'strategy' || id == 'signal') {
+      setNavChoose({
+        watchlist: false,
+        filter: false,
+        home: false,
+        strategy: false,
+        signal: false,
+      });
+      setNavChoose(prev => {
+        return {
+          ...prev,
+          [id]: true
+        }
+      })
+    }
+  }
   return (
     <div className="tradino">
       <div className="mb-buyStrategy-content">
@@ -33,11 +64,32 @@ export default function MobileBuyStrategy() {
                 </div>
                 <span className="big">USDJPY </span><span className="small"> in 1 hour time frame</span>
               </div>
-              <img className='mb-more-icon-buyStrategy'
+              {!moreBackTest ? <img className='mb-more-icon-buyStrategy'
                 aria-label="more"
+                id='moreBacktest'
                 onClick={handleClick}
-                src={more} />
+                src={more} /> : <img className='mb-more-icon-buyStrategy'
+                  aria-label="less"
+                  id="lessBacktest"
+                  onClick={handleClick}
+                  src={less} />}
             </div>
+            {moreBackTest && <><div className="line"></div>
+              <div className="mb-buyStrategy-first-row">
+                <div className="row">
+                  <div className="mb-buyStrategy-first-row-img">
+                    <img className="mb-buyStrategy-img-big" src={us} />
+                    <img className="mb-buyStrategy-img-small" src={japan} />
+                  </div>
+                  <span className="big">USDJPY </span><span className="small"> in 1 hour time frame</span>
+                </div>
+              </div>
+              <div className="line"></div>
+              <MobileButton className={'mb-small-green-btn'} name={'create new backteat'}/>
+            </>
+
+            }
+
 
           </div>
           <h4>Money trend</h4>
@@ -65,7 +117,7 @@ export default function MobileBuyStrategy() {
               <p className="space-between">multi time frame    <span>No</span></p>
             </div>
             <div>
-              <p style={{fontSize:'13px'}}>more</p>
+              <p style={{ fontSize: '13px' }}>more</p>
               <img
                 aria-label="more"
                 onClick={handleClick}
@@ -74,8 +126,8 @@ export default function MobileBuyStrategy() {
           </div>
           <MobileButton className={'mb-big-green-btn'} name={'Buy strategy now'} />
         </div>
-
       </div>
+      <MobileBottomNav navChoose={navChoose} handleClick={handleClick} />
     </div>
   );
 }
