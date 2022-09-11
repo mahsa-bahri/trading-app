@@ -62,17 +62,7 @@ export default function MobileAutoPageAnalyze() {
       [name]: value
     });
   }
-  /*
-  //test range input
-  const [value, setValue] = useState(0);
-
-  const getBackgroundSize = () => {
-    let backgroundSize = `${(value * 100) / max}% 100%`;
-    //console.log(backgroundSize);
-    return { backgroundSize: `${(value * 100) / max}% 100%` };
-  };
-  //test till  here
- */
+  
   const handleClick = (e) => {
     e.preventDefault();
     let id = e.currentTarget.id;
@@ -104,7 +94,7 @@ export default function MobileAutoPageAnalyze() {
             src={back} />
         </Link>
         <div className="mb-analyzePag-chart">
-          <ChartView width={windowWidth } />
+          <ChartView width={windowWidth} />
         </div>
         <nav className="mb-analyzePge-top-nav">
           <pre className="mb-analyzePge-top-nav-item" onClick={handleClick} id={'autoTchnical'}>Auto Technical
