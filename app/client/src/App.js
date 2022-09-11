@@ -62,7 +62,8 @@ export default function App() {
           <Route path={Applicant.mobileFisrtPage} component={MobileFirstPage} />
           <Route path={Applicant.mobileStrategyPage} component={MobileStrategyPage}/>
           <Route path={Applicant.mobileForgetPassword} component={MobileForgetPassword} />
-          <Route path={Applicant.noPage} component={Error404Page} />
+          <Route component={Error404Page} />
+          <Route path={Applicant.defualt} component={MobileLogin}/>
           {/*<Route path={Applicant.defualt} component={MobileLogin} />*/}
           {/* <PrivateRoute path="/edit-profile" component={EditProfile} />  */}
         </Switch>
