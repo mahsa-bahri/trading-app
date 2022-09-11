@@ -1,12 +1,12 @@
 //in login page user enters login and password to enter his account
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 //component
 import { MobileButton } from "../../components/mobile-component/button/MobileButton.jsx";
 import { Input } from "../../components/input/Input";
 import { MobileOrItem } from "../../components/mobile-component/orItem/MobileOrItem";
 //link
-import { Link } from "react-router-dom";
 import applicant from '../../Applicant.json';
 //error handling
 import { Error } from '../ErrorHandling';

@@ -25,6 +25,7 @@ import MobileSearchPage from './view/mobile/MobileSearchPage';
 import MobileAutoPageAnalyze from './view/mobile/MoblieAutoPageAnalyze';
 import MobileFirstPage from './view/mobile/MobileFirstPage';
 import MobileStrategyPage from './view/mobile/MobileStrategyPage';
+import MobileBuyStrategy from './view/mobile/MobileBuyStrategy';
 // Routs in json
 import Applicant from "./Applicant.json"
 
@@ -61,6 +62,7 @@ export default function App() {
           <Route path={Applicant.mobileSearchPage} component={MobileSearchPage} />
           <Route path={Applicant.mobileFisrtPage} component={MobileFirstPage} />
           <Route path={Applicant.mobileStrategyPage} component={MobileStrategyPage}/>
+          <Route path={Applicant.mobileBuyStrategy} component={MobileBuyStrategy}/>
           <Route path={Applicant.mobileForgetPassword} component={MobileForgetPassword} />
           <Route component={Error404Page} />
           <Route path={Applicant.defualt} component={MobileLogin}/>

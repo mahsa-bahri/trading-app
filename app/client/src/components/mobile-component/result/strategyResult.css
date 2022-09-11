@@ -56,8 +56,7 @@
 }
 
 .mb-strategy-result-distance {
-  margin-right: 5%;
-
+margin: 10px 5% 0 0;
 }
 
 .mb-strategy-result-title,
@@ -75,6 +74,10 @@
   font-weight: 600;
   font-size: 10px;
   line-height: 14px;
+}
+.mb-strategy-star-icon-result{
+  width:20px;
+  margin-top: 10px;
 }
 
 .mb-strategy-img-result {

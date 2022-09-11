@@ -18,5 +18,6 @@
   "mobileSearchPage":"/mobile-search",
   "mobileAutoPageAnalyzer":"/mobile-auto-analyze",
   "mobileFisrtPage":"/mobile-firstPage",
-  "mobileStrategyPage":"/mobile-strategy"
+  "mobileStrategyPage":"/mobile-strategy",
+  "mobileBuyStrategy":"/mobile-buy-strategy"
 }

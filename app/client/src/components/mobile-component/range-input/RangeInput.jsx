@@ -10,7 +10,15 @@ import info from '../../../assets/icon/info.svg';
 import { MoreInfo } from "../more-info/MoreInfo";
 
 export function RangeInput({ label, name, max }) {
-  const [data, setData] = useState(5);
+  const [data, setData] = useState({
+    1: 5,
+    2: 5,
+    3: 5,
+    4: 5,
+    5: 5,
+  }
+
+  );
   const [components, setComponents] = useState(['']);
   //this hook is for whether checkbox is activated or not
   //const [isChecked, setIsChecked] = useState(false);
@@ -18,23 +26,33 @@ export function RangeInput({ label, name, max }) {
   const [morePressed, setMorePressed] = useState(false);
   //calculate the filled area
   const getBackgroundSize = (i) => {
-      return { backgroundSize: `${(data * 100) / max}% 100%` };
-    
+    return { backgroundSize: `${(data * 100) / max}% 100%` };
+
   };
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setData(value);
+  const handleChange = (e, i) => {
+
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+
   }
   const handleClick = (e) => {
     e.preventDefault();
     setMorePressed(!morePressed);
   }
   function addComponent() {
+    console.log("zero")
     setComponents([...components, "Sample Component"])
   }
   return (
     <div>
-      {components.map((item, i) => (<div key={item} className="mb-analyzePge-row">
+      {components.map((item, i) => (<div key={i} className="mb-analyzePge-row">
+
+        <p onClick={() => {
+          //console.log(data)
+        }}>{i}</p>
         <div className="mb-analyzePge-box-row">
           <img className='mb-info-icon-analyzePge'
             aria-label="info"
@@ -47,9 +65,9 @@ export function RangeInput({ label, name, max }) {
                 min="0"
                 max={max}
                 onChange={handleChange}
-                name={name}
+                name={i}
                 style={getBackgroundSize(i)}
-                value={data}
+                value={data.i}
               />
               <div className='wrapper'>
                 <input type={'checkbox'} className="mb-autoPage-checkbox"

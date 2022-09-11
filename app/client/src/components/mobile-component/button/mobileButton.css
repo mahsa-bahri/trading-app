@@ -17,7 +17,19 @@
   box-shadow: 5px 5px 10px rgba(22, 27, 29, 0.23), -5px -5px 10px #FAFBFF;
   border-radius: 20px;
 }
+.mb-big-green-btn{
+  border: 0px;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 600;
+  width: 75vw;
+  height: 52.67px;
+  background: linear-gradient(91.09deg, #6EFDD1 2.17%, #94FFA6 99.73%);
+  box-shadow: 5px 5px 10px rgba(22, 27, 29, 0.23), -5px -5px 10px #FAFBFF;
+  border-radius: 20px;
 
+}
 .mb-white-btn {
   cursor: pointer;
   border: 0px;

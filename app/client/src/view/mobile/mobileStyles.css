@@ -365,9 +365,11 @@
 .white {
   background-color: white;
 }
-.mb-analyzePag-chart{
+
+.mb-analyzePag-chart {
   width: 10vw;
 }
+
 .mb-back-icon-analyzePge {
   width: 10px;
   margin: 20px 40px;
@@ -414,7 +416,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height:450px ;
+  height: 450px;
 }
 
 .mb-analyzePge-2white-content {
@@ -642,7 +644,8 @@
   transform: translateY(-50%);
 }
 
-.mb-strategyPge-gray-content {
+.mb-strategyPge-gray-content,
+.mb-buyStrategy-grey-content {
   width: 100vw;
   background: #F7F7F7;
   border-radius: 40px 40px 0px 0px;
@@ -658,4 +661,173 @@
   align-self: flex-start;
   margin-left: 4vw;
   margin-top: 10px;
+}
+
+/* mobile buy strategy styles*/
+.mb-buyStrategy-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mb-buyStrategy-grey-content h4 {
+  margin: 40px 20px 0px;
+  align-self: flex-start;
+}
+
+.mb-buyStrategy-green-title-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+}
+
+.mb-buyStrategy-green-title-content h1,
+.mb-buyStrategy-green-title-content h4 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  background: linear-gradient(95.2deg, #6EFDD1 0%, #94FFA6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mb-buyStrategy-backtest {
+  width: 85vw;
+  height: max-content;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  padding-right: 5%;
+}
+
+.mb-buyStrategy-first-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.mb-buyStrategy-first-row .row {
+  align-self: flex-start;
+  justify-self: flex-start;
+  /**/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+
+}
+
+.mb-buyStrategy-first-row-img {
+  position: relative;
+  align-self: flex-start;
+  justify-self: flex-start;
+  width: 40px;
+  height: 40px;
+  margin-right: 10%;
+}
+
+.mb-buyStrategy-img-big {
+  position: absolute;
+  top: 10px;
+  left: 40%;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  z-index: 2;
+}
+
+.mb-buyStrategy-img-small {
+  position: absolute;
+  top: 35px;
+  left: 46%;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  border-radius: 1px solid grey;
+}
+
+.mb-buyStrategy-first-row .big {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #313D4C;
+  width: 70px;
+  margin-left: 10px;
+}
+
+.mb-buyStrategy-first-row .small {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  /* identical to box height */
+  letter-spacing: 0.02em;
+  color: #313D4C;
+  width: 120px;
+}
+
+.mb-more-icon-buyStrategy {
+  margin-left: 5vw;
+}
+
+.mb-buyStrategy-moneyTrend {
+  width: 85vw;
+  height: max-content;
+  background-color: white;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.mb-buyStrategy-moneyTrend img {
+  width: 80vw;
+}
+
+.mb-buyStrategy-backtestInfo {
+  width: 85vw;
+  height: 185px;
+  background: linear-gradient(104.05deg, #6FFED1 1.78%, #94FFA5 100%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5%;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.mb-buyStrategy-backtestInfo-items {
+  width: 42%;
+  height: 29px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+
+.mb-buyStrategy-backtestInfo-items .space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
 }
