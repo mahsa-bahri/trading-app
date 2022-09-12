@@ -638,8 +638,7 @@
   transform: translateY(-50%);
 }
 
-.mb-strategyPge-gray-content,
-.mb-buyStrategy-grey-content {
+.mb-strategyPge-gray-content {
   width: 100vw;
   background: #F7F7F7;
   border-radius: 40px 40px 0px 0px;
@@ -664,10 +663,22 @@
   justify-content: center;
   align-items: center;
 }
+.mb-buyStrategy-grey-content {
+  width: 100vw;
+  background: #F7F7F7;
+  border-radius: 40px 40px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 10px;
+  min-height: 80vh;
+  padding-top:20px ;
+}
 
 .mb-buyStrategy-grey-content h4 {
-  margin: 40px 20px 0px;
-  align-self: flex-start;
+  margin-top: 20px;
+  width: 85vw;
 }
 
 .mb-buyStrategy-green-title-content {
@@ -785,6 +796,7 @@
 }
 
 .mb-buyStrategy-moneyTrend {
+  position: relative;
   width: 85vw;
   height: max-content;
   background-color: white;
@@ -793,7 +805,16 @@
   padding: 5px;
 }
 
-.mb-buyStrategy-moneyTrend img {
+.mb-info-icon-moneyTrend {
+  width: 15px;
+  position: absolute;
+  box-sizing: border-box;
+  top: -15px;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.mb-buyStrategy-moneyTrend .image {
   width: 80vw;
 }
 
@@ -811,6 +832,7 @@
   text-align: center;
   padding-top: 10px;
 }
+
 
 .mb-buyStrategy-backtestInfo-items {
   width: 42%;
@@ -831,4 +853,12 @@
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
+}
+.mb-buyStrategy-closedSignals{
+  height: 108px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
 }

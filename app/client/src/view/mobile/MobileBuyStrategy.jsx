@@ -3,6 +3,7 @@ import React, { useState } from "react";
 //icon
 import more from '../../assets/icon/more.svg';
 import less from '../../assets/icon/less.svg';
+import info from '../../assets/icon/info.svg';
 //image
 import us from '../../assets/images/american-flag.jpg';
 import japan from '../../assets/images/japan-flag.jpg';
@@ -85,16 +86,18 @@ export default function MobileBuyStrategy() {
                 </div>
               </div>
               <div className="line"></div>
-              <MobileButton className={'mb-small-green-btn'} name={'create new backteat'}/>
+              <MobileButton className={'mb-small-green-btn'} name={'create new backteat'} />
             </>
 
             }
-
-
           </div>
           <h4>Money trend</h4>
           <div className="mb-buyStrategy-moneyTrend">
-            <img src={chart1} />
+            <img className='mb-info-icon-moneyTrend'
+              aria-label="info"
+              src={info} />
+
+            <img className="image" src={chart1} />
           </div>
           <h4>Backtest info</h4>
           <div className="mb-buyStrategy-backtestInfo">
@@ -125,6 +128,13 @@ export default function MobileBuyStrategy() {
             </div>
           </div>
           <MobileButton className={'mb-big-green-btn'} name={'Buy strategy now'} />
+        <h4>closed signals</h4>
+        <div className="mb-buyStrategy-closedSignals">
+          <div>
+            
+          </div>
+        </div>
+
         </div>
       </div>
       <MobileBottomNav navChoose={navChoose} handleClick={handleClick} />

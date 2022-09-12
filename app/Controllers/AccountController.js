@@ -65,32 +65,38 @@ const Signup = async (user, email, pass1, pass2) => {
       redirect: 'follow',
     }
   );
-/*
-  const response = await fetch(req)
-  const json = await response.json();
-
-  Error.ErorrHandling(json.status);
-  */
+  /*
+    const response = await fetch(req)
+    const json = await response.json();
+  
+    Error.ErorrHandling(json.status);
+    */
   //
   let myToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpoakBraG5rLmNvbSIsImV4cCI6MTY2NTU3MjIxMywidXNlcl9pZCI6ImM1NzI5MzFhLTA4YWQtNDc3Zi04ZDhlLWQwNWJjNmViYjIwYiIsInVzZXJuYW1lIjoiMTIzNDU2Nzg5In0.v6t98KhkJ3yLEzn-yCGLhsHm2xE2nhL7fdNlgZHCV6s";
 
-  let encoded=Base64.encode(myToken);
-  localStorage.setItem("user", myToken);
+  let encoded = Base64.encode(myToken);
+  localStorage.setItem("user", encoded);
   //
   /*if (json.data.key) {
     // var MyToken = encode(json.data.key + "");
     // console.log(MyToken)
     localStorage.setItem("key", MyToken);
   }*/
-/*
-  return {
-    json: json.data,
-    status: json.status,
-    message: json.message
-  };
-  */
+  /*
+    return {
+      json: json.data,
+      status: json.status,
+      message: json.message
+    };
+    */
 }
-
+const getToken = () => {
+  let myToken = localStorage.getItem("user");
+  if (myToken != '') {
+    let decoded = Base64.decode(myToken);
+    return decoded;
+  }else return false;
+}
 export const AccountController = {
   Login,
   Signup,

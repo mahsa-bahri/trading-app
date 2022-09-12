@@ -37,6 +37,8 @@ export function RangeInput({ label, name, max }) {
   }
   const handleClick = (e) => {
     e.preventDefault();
+    const { name, value } = e.target;
+    setCurrent(name);
     setMorePressed(!morePressed);
   }
   function addComponent() {
