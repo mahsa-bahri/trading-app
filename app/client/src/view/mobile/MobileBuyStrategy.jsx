@@ -16,6 +16,7 @@ import { MobileBottomNav } from "../../components/mobile-component/bottom-navbar
 
 export default function MobileBuyStrategy() {
   const [moreBackTest, setMoreBackTest] = useState(false);
+  const [moreInfo, setMoreInfo] = useState(false);
   const [navChoose, setNavChoose] = useState({
     watchlist: false,
     filter: false,
@@ -45,6 +46,8 @@ export default function MobileBuyStrategy() {
           [id]: true
         }
       })
+    } else if (id == 'moreInfo' || id == 'lessInfo') {
+      setMoreInfo(!moreInfo);
     }
   }
   return (
@@ -119,13 +122,49 @@ export default function MobileBuyStrategy() {
             <div className="mb-buyStrategy-backtestInfo-items">
               <p className="space-between">multi time frame    <span>No</span></p>
             </div>
-            <div>
+
+            {moreInfo && <>
+              <div className="mb-buyStrategy-backtestInfo-items">
+                <p className="space-between">Max darwdown    <span style={{ color: 'green' }}>10%</span></p>
+              </div>
+              <div className="mb-buyStrategy-backtestInfo-items">
+                <p className="space-between">multi time frame    <span>No</span></p>
+              </div>
+              <div className="mb-buyStrategy-backtestInfo-items">
+                <p className="space-between">Max darwdown    <span style={{ color: 'green' }}>10%</span></p>
+              </div>
+              <div className="mb-buyStrategy-backtestInfo-items">
+                <p className="space-between">multi time frame    <span>No</span></p>
+              </div>
+              <div className="mb-buyStrategy-backtestInfo-items">
+                <p className="space-between">Max darwdown    <span style={{ color: 'green' }}>10%</span></p>
+              </div>
+              <div className="mb-buyStrategy-backtestInfo-items">
+                <p className="space-between">multi time frame    <span>No</span></p>
+              </div>
+              <div className="mb-buyStrategy-backtestInfo-items">
+                <p className="space-between">Max darwdown    <span style={{ color: 'green' }}>10%</span></p>
+              </div>
+              <div className="mb-buyStrategy-backtestInfo-items">
+                <p className="space-between">multi time frame    <span>No</span></p>
+              </div>
+            </>}
+            {!moreInfo ? <div>
               <p style={{ fontSize: '13px' }}>more</p>
               <img
                 aria-label="more"
+                id='moreInfo'
                 onClick={handleClick}
                 src={more} />
+            </div> : <div>
+              <img
+                aria-label="less"
+                id='lessInfo'
+                onClick={handleClick}
+                src={less} />
+              <p style={{ fontSize: '13px' }}>less</p>
             </div>
+            }
           </div>
           <div className="mb-buyStrategy-note">
             <span>more frome creator</span>

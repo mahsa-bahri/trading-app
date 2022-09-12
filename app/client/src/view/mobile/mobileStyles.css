@@ -821,7 +821,7 @@
 
 .mb-buyStrategy-backtestInfo {
   width: 85vw;
-  height: 185px;
+  height: max-content;
   background: linear-gradient(104.05deg, #6FFED1 1.78%, #94FFA5 100%);
   border-radius: 10px;
   display: flex;
@@ -831,7 +831,7 @@
   column-gap: 5%;
   flex-wrap: wrap;
   text-align: center;
-  padding-top: 10px;
+  padding: 10px;
 }
 
 
@@ -842,6 +842,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   text-align: center;
+  margin:5px;
   padding: 5px;
 }
 
