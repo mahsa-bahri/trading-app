@@ -14,6 +14,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top left;
+  overflow: scroll;
   height: 100vh;
   padding-top: 10px;
 }
@@ -36,6 +37,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top left;
+  overflow: scroll;
   height: 100vh;
   padding-top: 40px;
 }
@@ -155,7 +157,7 @@
 }
 
 .verificition-note {
-  font-size: 2.30vh;
+  font-size: 16px;
   font-weight: 400;
   line-height: 22px;
   font-style: normal;
@@ -263,6 +265,7 @@
   background-size: cover;
   background-position: top left;
   height: 100vh;
+  overflow: scroll;
   padding-left: 96px;
   padding-top: 40px;
 }
@@ -299,6 +302,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top left;
+  overflow: scroll;
   height: 100vh;
   padding-top: 40px;
 }
@@ -326,6 +330,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top left;
+  overflow: scroll;
   height: 100vh;
   padding-top: 40px;
 }
@@ -518,25 +523,6 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 900px) {
-
-  .signin-content,
-  .frgtPage-content,
-  .newPassPge-content {
-    width: 406px;
-  }
-
-  .frgtPage-content,
-  .newPassPge-content {
-    height: 100vh;
-  }
-
-  .frgtPage-title {
-    font-size: 27px;
-  }
-
-}
-
 @media screen and (max-width: 660px) {
 
   .signin-content,
@@ -548,15 +534,18 @@
   }
 
   .login-page {
+    background: #F7F7F7;
     padding-left: 0px;
     padding-top: 0px;
   }
 
   .forgot-password-page {
+    background: #F7F7F7;
     padding-top: 0px;
   }
 
   .new-password-page {
+    background: #F7F7F7;
     padding-top: 0px;
   }
 

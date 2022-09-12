@@ -72,13 +72,16 @@ export default function App() {
       </Router>
     )
   } else {
+    
+    // if (window.location.pathname == '/') {
+    //   window.location.pathname = Applicant.signin;
+    // }
 
     return (
-
       <Router>
         <Switch>
           {
-            window.location.pathname == Applicant.defualt ? <Route component={Login} /> : null
+            window.location.pathname == Applicant.defualt ? <Route component={Login}  /> : null 
           }
           <Route path={Applicant.signup} component={Signup} />
           <Route path={Applicant.signin} component={Login} />
