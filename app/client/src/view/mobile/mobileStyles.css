@@ -856,10 +856,43 @@
   font-size: 11px;
 }
 
+.mb-buyStrategy-note {
+  margin: 20px 0 20px 0;
+  width: 75vw;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.mb-buyStrategy-note p {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 14px;
+  color: #000000;
+  padding: 5px;
+}
+
+.mb-buyStrategy-note span {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 14px;
+  color: #000000;
+}
+.mb-buyStrategy-title-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .mb-buyStrategy-closedSignals {
   height: 113px;
   width: 100vw;
-  margin-left:  9vw;
+  margin-left: 9vw;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -873,7 +906,7 @@
 }
 
 .mb-buyStrategy-closedSignals-box {
-  width: 80vw;
+  width: 85vw;
   height: 113px;
   left: 26px;
   top: 910px;
@@ -914,7 +947,13 @@
   line-height: 14px;
   letter-spacing: 0.02em;
   text-align: center;
+}
 
+.mb-buyStrategy-big-line {
+  background-color: rgb(197, 195, 195);
+  width: 100%;
+  height: 1px;
+  text-align: center;
 }
 
 .mb-buyStrategy-column .name {
@@ -956,4 +995,8 @@
   color: #313D4C;
   padding: 5px;
   margin-right: 20px;
+}
+
+.blur {
+  filter: blur(2px);
 }

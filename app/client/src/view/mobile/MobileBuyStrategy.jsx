@@ -127,8 +127,21 @@ export default function MobileBuyStrategy() {
                 src={more} />
             </div>
           </div>
+          <div className="mb-buyStrategy-note">
+            <span>more frome creator</span>
+            <p>
+              In publishing and graphic design, Lorem ipsum is a placeholder text commonly used
+              to demonstrate the form of a document or a typeface without relying on meaningful content.
+              Lorem ipsum may be used as
+              a placeholder before final copy is available.In publishing and graphic design.
+            </p>
+          </div>
+          <div className="mb-buyStrategy-big-line"></div>
           <MobileButton className={'mb-big-green-btn'} name={'Buy strategy now'} />
-          <h4>closed signals</h4>
+          <div className="mb-buyStrategy-title-row">
+            <h4>closed signals</h4>
+            <h5>more</h5>
+          </div>
           <div className="mb-buyStrategy-closedSignals">
             <div className="mb-buyStrategy-closedSignals-box">
               <div className="first-row">
@@ -181,7 +194,62 @@ export default function MobileBuyStrategy() {
               </div>
             </div>
           </div>
-
+          <div className="mb-buyStrategy-title-row">
+            <h4>live signals</h4>
+            <h5>more</h5>
+          </div>
+          <div className="mb-buyStrategy-closedSignals blur">
+            <div className="mb-buyStrategy-closedSignals-box">
+              <div className="first-row">
+                <div className="mb-buyStrategy-first-row-img">
+                  <img className="mb-buyStrategy-img-big" src={us} />
+                  <img className="mb-buyStrategy-img-small" src={japan} />
+                </div>
+                <div className="mb-buyStrategy-column">
+                  <span className="name">USDJPY </span>
+                  <span className="date">13july 2022 18:30</span>
+                </div>
+                <p className="mb-buyStrategy-pips">
+                  +70Pips (+0.18%)
+                </p>
+              </div>
+              <div className="first-row">
+                <div className="mb-buyStrategy-column2">
+                  <pre>Buy in        0.6789</pre>
+                  <pre>Risk/Reward  <span style={{ color: '#6ffed1ba' }}>1.76</span></pre>
+                </div>
+                <div className="mb-buyStrategy-column2">
+                  <pre>profit      0.6789</pre>
+                  <pre>Stop loss  <span >1.76</span></pre>
+                </div>
+              </div>
+            </div>
+            <div className="mb-buyStrategy-closedSignals-box">
+              <div className="first-row">
+                <div className="mb-buyStrategy-first-row-img">
+                  <img className="mb-buyStrategy-img-big" src={us} />
+                  <img className="mb-buyStrategy-img-small" src={japan} />
+                </div>
+                <div className="mb-buyStrategy-column">
+                  <span className="name">USDJPY </span>
+                  <span className="date">13july 2022 18:30</span>
+                </div>
+                <p className="mb-buyStrategy-pips">
+                  +70Pips (+0.18%)
+                </p>
+              </div>
+              <div className="first-row">
+                <div className="mb-buyStrategy-column2">
+                  <pre>Buy in        0.6789</pre>
+                  <pre>Risk/Reward  <span style={{ color: '#6ffed1ba' }}>1.76</span></pre>
+                </div>
+                <div className="mb-buyStrategy-column2">
+                  <pre>profit      0.6789</pre>
+                  <pre>Stop loss  <span >1.76</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="mb-general-bottom-space"></div>
         </div>
       </div>
