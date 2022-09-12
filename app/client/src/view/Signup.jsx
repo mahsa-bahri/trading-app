@@ -1,5 +1,4 @@
 // This page show us the signup, it worked with google and user inputs
-
 import React from 'react';
 import { useState } from 'react';
 
@@ -9,7 +8,7 @@ import { Button } from '../components/button/Button';
 import { Input } from '../components/input/Input';
 import { OrItem } from '../components/orItem/OrItem';
 
-//Icons
+// Icons
 import checkmark from '../assets/icon/checkmark.svg';
 
 // Routs in json
