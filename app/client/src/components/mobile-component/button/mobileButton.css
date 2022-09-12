@@ -30,6 +30,11 @@
   border-radius: 20px;
 margin-bottom: 20px;
 }
+.mb-big-green-btn{
+  position: fixed;
+  bottom: 80px;
+  z-index: 3;
+}
 .mb-small-green-btn{
   width: 45vw;
   height: 30px;
