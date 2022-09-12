@@ -19,7 +19,7 @@ import Applicant from '../Applicant.json';
 import { Error } from './ErrorHandling';
 
 // Controller for post data
-import { Controller } from '../../../Controllers/AccountController';
+import { AccountController } from '../../../Controllers/AccountController';
 
 // Style
 import '../styles.css';
@@ -123,7 +123,7 @@ export default function Signup() {
       password_valid.massage == '' &&
       confirm_password_valid.massage == ''
     ) {
-      const response = await Controller.Signup(
+      const response = await AccountController.Signup(
         inputForm['Username'],
         inputForm['Email'],
         inputForm['Password'],

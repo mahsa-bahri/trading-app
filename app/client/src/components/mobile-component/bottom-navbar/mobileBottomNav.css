@@ -15,6 +15,7 @@
   bottom: 0;
   left: 0;
   fill: none;
+  z-index: 2;
 }
 
 .chosen-nav {

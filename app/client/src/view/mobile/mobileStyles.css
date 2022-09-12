@@ -90,7 +90,7 @@
 .mb-newPassPge-content,
 .mb-signup-content,
 .mb-verifyemail-content {
-  height: max-content;
+  height: 81vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -100,12 +100,6 @@
   border-radius: 40px 40px 0px 0px;
 }
 
-
-.mb-frgtPage-content,
-.mb-newPassPge-content,
-.mb-verifyemail-content {
-  height: 80vh;
-}
 
 .mb-login-title {
   width: 92px;

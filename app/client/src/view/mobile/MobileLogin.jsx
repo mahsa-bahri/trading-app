@@ -73,6 +73,10 @@ export default function MobileLogin() {
       emailClass: email_box,
       passwordClass: password_box,
     });
+    // If all inputs have no error, send to login controller to post data
+    if (email_valid.massage == '' && password_valid.massage == '') {
+      Controller.Login(inputForm['Email'], inputForm['Password']);
+    }
   };
 
 

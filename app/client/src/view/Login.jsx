@@ -18,7 +18,7 @@ import Applicant from '../Applicant.json';
 import { Error } from './ErrorHandling';
 
 // Controller for post data
-import { Controller } from '../../../Controllers/AccountController';
+import { AccountController } from '../../../Controllers/AccountController';
 
 export default function Login() {
   // This hook, use for inputs class name when the client input the wrong data
@@ -76,7 +76,7 @@ export default function Login() {
 
     // If all inputs have no error, send to login controller to post data
     if (email_valid.massage == '' && password_valid.massage == '') {
-      Controller.Login(inputForm['Email'], inputForm['Password']);
+      AccountController.Login(inputForm['Email'], inputForm['Password']);
     }
   };
 

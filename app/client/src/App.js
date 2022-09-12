@@ -36,7 +36,7 @@ import './view/mobile/mobileStyles.css'
 
 export default function App() {
 
-  const [windowWidth, setWindowWidth] = useState(1150);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     function handleWindowResize() {

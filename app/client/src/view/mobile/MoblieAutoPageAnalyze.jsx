@@ -94,7 +94,7 @@ export default function MobileAutoPageAnalyze() {
             src={back} />
         </Link>
         <div className="mb-analyzePag-chart">
-          <ChartView width={windowWidth} />
+          <ChartView width={windowWidth-50} />
         </div>
         <nav className="mb-analyzePge-top-nav">
           <pre className="mb-analyzePge-top-nav-item" onClick={handleClick} id={'autoTchnical'}>Auto Technical
