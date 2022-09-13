@@ -31,7 +31,7 @@
 }
 
 .input-error {
-    font-size: 1.38vh;
+    font-size: 7.5px;
     color: red;
     padding: 4px 0 0 5px;
 }
@@ -45,7 +45,7 @@
         font-size: 13px;
     }
 
-    .input,.wrong-input {
+    .input, .wrong-input {
         width: 70vw;
     }
     .input-error{

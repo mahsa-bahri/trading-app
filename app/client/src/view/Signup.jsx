@@ -8,6 +8,8 @@ import { Button } from '../components/button/Button';
 import { Input } from '../components/input/Input';
 import { OrItem } from '../components/orItem/OrItem';
 
+import { CircularProgress } from '@material-ui/core';
+
 // Icons
 import checkmark from '../assets/icon/checkmark.svg';
 
@@ -24,6 +26,9 @@ import { AccountController } from '../../../Controllers/AccountController';
 import '../styles.css';
 
 export default function Signup() {
+  // This hook use for check click button or not
+  const [isClick, setIsClick] = useState(false);
+
   //This hook is used to see whether the privacy checkbo is checked or not
   const [isChecked, setIsChecked] = useState(false);
   const handlePrivacyCheck = e => {
@@ -122,7 +127,8 @@ export default function Signup() {
       password_valid.massage == '' &&
       confirm_password_valid.massage == ''
     ) {
-      const response = await AccountController.Signup(
+      setIsClick(true);
+      const response = await Controller.Signup(
         inputForm['Username'],
         inputForm['Email'],
         inputForm['Password'],
@@ -203,7 +209,11 @@ export default function Signup() {
           </div>
 
           <div className="signup-button">
-            <Button className="green-btn" name="Sign Up" icon={false} />
+            <Button
+              className="green-btn"
+              name={isClick ? <CircularProgress /> : 'Sign Up'}
+              icon={false}
+            />
           </div>
         </form>
 
