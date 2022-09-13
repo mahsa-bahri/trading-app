@@ -3,7 +3,7 @@ import { Error } from "./StatusHandling";
 import { Config } from "./Config";
 //encode decode package
 import { Base64 } from 'js-base64';
-import { encode, decode } from 'js-base64';
+// import { encode, decode } from 'js-base64';
 
 const Login = async (email, pass) => {
 
@@ -55,7 +55,7 @@ const Signup = async (user, email, pass1, pass2) => {
   formdata.append("email", email);
   formdata.append("password", pass1);
   formdata.append("confirm_password", pass2);
-
+  
 
   let req = new Request(
     Config.getBaseUrl() + '/api/v1/auth/sign-up',
