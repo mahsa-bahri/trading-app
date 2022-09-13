@@ -1656,20 +1656,17 @@ label.logo {
 }
 
 /* analyze page */
+
 .analyze-page {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
 }
 
-/* 
-.auto-analyze-chart {
-  margin: 200px;
-} */
+.analyzePag-chart {
+  width: 50%;
+}
 
 .analyzePage-content {
-  width: 0px;
-  /* background-color: #932d2d; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1677,19 +1674,19 @@ label.logo {
 }
 
 .analyzePage-top-nav {
-  display: flex;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
-  background-color: rgb(157, 21, 21);
-  padding: 30px 0 0 0;
+  overflow: scroll;
+  padding: 10px 0 0 0;
+  white-space: nowrap;
+  width: 710px;
 }
 
 .analyzePage-top-nav-item {
-  display: flex;
-  flex-direction: row;
   font-size: 3vh;
-  flex-direction: column;
   align-items: center;
-  margin: 0 20px;
+  display: inline-block;
+  text-align: center;
+  padding: 14px;
 }
 
 .analyzePage-underline {
@@ -1700,16 +1697,18 @@ label.logo {
 }
 
 .analyzePage-boxes {
-  width: 690px;
+  width: 710px;
+  height: 650px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   background-color: #F5F5F5;
   margin-top: -20px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .analyzePage-boxes-box {
-  width: max-content;
   background: #FFFFFF;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -1792,10 +1791,87 @@ label.logo {
 
 .analyzePge-decrease-button {
   position: absolute;
-
-
 }
 
 .idea-btn-icon-analyzePge {
   position: relative;
+}
+
+.box-ideas-1 {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+
+}
+
+.box-ideas-1 span {
+  margin: 0 10px;
+}
+
+.box-ideas-1 select {
+  /* padding: 30px 30px; */
+  height: 40px;
+  width: 60px;
+}
+
+.box-ideas-2 {
+  display: flex;
+  margin-left: 20px;
+}
+
+.box-ideas-2 h4 {
+  padding-left: 10px;
+  line-height: -10px;
+}
+
+
+@media screen and (max-width:1430px) {
+
+  .analyzePag-chart {
+    width: 100%;
+  }
+
+  .analyzePage-content {
+    justify-content: center;
+    margin: auto;
+  }
+
+}
+
+
+@media screen and (max-width:715px) {
+
+  .analyzePage-top-nav {
+    padding: 10px 0 0 0;
+    white-space: nowrap;
+    width: 410px;
+  }
+
+  .analyzePage-boxes {
+    width: 410px;
+  }
+
+  .analyzePage-boxes-box {
+    margin: 10px 10px;
+  }
+
+
+  .analyzePage-2white-content {
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  .analyzePage-2white-content-button button:first-child {
+    width: 110px;
+    margin: 0 20px;
+  }
+
+  .analyzePage-2white-content-button button:nth-child(2) {
+    width: 110px;
+    margin: 0 0px;
+  }
+
+  .analyzePage-2white-content-idea .box-ideas {
+    width: 307px;
+  }
 }

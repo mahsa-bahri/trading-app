@@ -9,11 +9,13 @@
   background-color: green;
   border-radius: 5px 0 0 5px;
 }
-.mb-rating-badRate{
+
+.mb-rating-badRate {
   background-color: red;
   border-radius: 0 5px 5px 0;
 }
-.mb-rating-label{
+
+.mb-rating-label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

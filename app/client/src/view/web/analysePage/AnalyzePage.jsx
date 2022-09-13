@@ -11,12 +11,14 @@ import ChartShadowLine from './ChartShadowLine';
 import ChartDySrShadow from './ChartDySrShadow';
 import ChartDySrBody from './ChartDySrBody';
 import ChartFibo from './ChartFibo';
+import { Rating } from '../../../components/web-components/rate/Rating';
 
 // Svg icons
 import bearish from '../../../assets/icon/bearish.svg';
 import bullish from '../../../assets/icon/bullish.svg';
 
 export default function AutoAnalyzePage() {
+  const [timeRate, setTimeRate] = useState('24H');
   const [topNavChoose, setTopNavChoose] = useState({
     autoTchnical: true,
     favoriteTools: false,
@@ -75,14 +77,19 @@ export default function AutoAnalyzePage() {
     }
   };
 
+  const handleRate = () => {
+    var e = document.getElementById('ddlViewBy');
+    setTimeRate(e.value);
+  };
+
   return (
     <div className="analyze-page">
       <div className="analyzePag-chart">
-        <ChartView width={780}/>
-        <ChartShadowLine />
+        <ChartView />
+        {/* <ChartShadowLine />
         <ChartDySrShadow />
         <ChartDySrBody />
-        <ChartFibo />
+        <ChartFibo /> */}
       </div>
       <div className="analyzePage-content">
         <nav className="analyzePage-top-nav">
@@ -110,7 +117,7 @@ export default function AutoAnalyzePage() {
               }
             />
           </pre>
-          <span
+          <pre
             className="analyzePage-top-nav-item"
             onClick={handleClick}
             id={'andicator'}
@@ -119,8 +126,8 @@ export default function AutoAnalyzePage() {
             <div
               className={topNavChoose.andicator ? 'analyzePage-underline' : ''}
             />
-          </span>
-          <span
+          </pre>
+          <pre
             className="analyzePage-top-nav-item"
             onClick={handleClick}
             id={'similar'}
@@ -129,7 +136,31 @@ export default function AutoAnalyzePage() {
             <div
               className={topNavChoose.similar ? 'analyzePage-underline' : ''}
             />
-          </span>
+          </pre>
+          <pre
+            className="analyzePage-top-nav-item"
+            onClick={handleClick}
+            id={'another_one'}
+          >
+            another one
+            <div
+              className={
+                topNavChoose.another_one ? 'analyzePage-underline' : ''
+              }
+            />
+          </pre>
+          <pre
+            className="analyzePage-top-nav-item"
+            onClick={handleClick}
+            id={'another_one'}
+          >
+            another one
+            <div
+              className={
+                topNavChoose.another_one ? 'analyzePage-underline' : ''
+              }
+            />
+          </pre>
         </nav>
 
         <div className="analyzePage-boxes">
@@ -182,33 +213,34 @@ export default function AutoAnalyzePage() {
             <div className="analyzePage-2white-content">
               <h4>What's your idea?</h4>
               <div className="analyzePage-2white-content-button">
-                {/* <button>
+                <button>
                   <img src={bearish} alt="" /> Bearish
                 </button>
                 <button>
                   <img src={bullish} alt="" />
                   Bullish
-                </button> */}
-                <div className="analyzePge-decrease-button wrapper ">
-                  <img
-                    className="idea-btn-icon-analyzePge"
-                    aria-label="img"
-                    src={bearish}
-                  />
-                  <button>Bearish</button>
-                </div>
-                <div className="mb-analyzePge-increase-button wrapper ">
-                  <img
-                    className="mb-idea-btn-icon-analyzePge"
-                    aria-label="img"
-                    src={bullish}
-                  />
-                  <button>Bullish</button>
-                </div>
+                </button>
               </div>
               <div className="analyzePage-2white-content-idea">
                 <h4>people ideas</h4>
-                <div className="box-ideas">ss</div>
+                <div className="box-ideas">
+                  <div className="box-ideas-1">
+                    <span>
+                      <Rating goodRate={62} />
+                    </span>
+                    <select onChange={handleRate} id="ddlViewBy">
+                      <option>24H</option>
+                      <option>12H</option>
+                      <option>9H</option>
+                      <option>6H</option>
+                      <option>3H</option>
+                    </select>
+                  </div>
+                  <div className="box-ideas-2">
+                    <img src={bullish} alt="" />
+                    <h4>Good in {timeRate}</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
