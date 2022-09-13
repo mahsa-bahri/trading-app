@@ -38,6 +38,12 @@ export default function App() {
 
   const [windowWidth, setWindowWidth] = useState(1150);
 
+  useEffect(()=>{
+    if (window.location.pathname == '/') {
+      window.location.pathname = Applicant.signin;
+    }
+  },[])
+
   useEffect(() => {
     function handleWindowResize() {
       setWindowWidth(window.innerWidth);
@@ -72,11 +78,6 @@ export default function App() {
       </Router>
     )
   } else {
-    
-    // if (window.location.pathname == '/') {
-    //   window.location.pathname = Applicant.signin;
-    // }
-
     return (
       <Router>
         <Switch>
