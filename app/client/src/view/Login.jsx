@@ -19,8 +19,12 @@ import { Error } from './ErrorHandling';
 
 // Controller for post data
 import { Controller } from '../../../Controllers/AccountController';
+import { CircularProgress } from '@material-ui/core';
 
 export default function Login() {
+  // This hook use for check click button or not
+  const [isClick, setIsClick] = useState(false);
+
   // This hook, use for inputs class name when the client input the wrong data
   const [className, setClassName] = useState({
     emailClass: 'input',
@@ -76,6 +80,7 @@ export default function Login() {
 
     // If all inputs have no error, send to login controller to post data
     if (email_valid.massage == '' && password_valid.massage == '') {
+      setIsClick(true);
       Controller.Login(inputForm['Email'], inputForm['Password']);
     }
   };
@@ -111,7 +116,11 @@ export default function Login() {
           <Link to={Applicant.forgetPassword}>
             <p className="forgot-link"> Forgot password?</p>
           </Link>
-          <Button className="green-btn" name="login" icon={false} />
+          <Button
+            className="green-btn"
+            name={isClick ? <CircularProgress /> : 'login'}
+            icon={false}
+          />
         </form>
         <OrItem />
         <Button className="white-btn" name="sign in with google" icon={true} />

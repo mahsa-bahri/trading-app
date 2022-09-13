@@ -8,6 +8,8 @@ import { Button } from '../components/button/Button';
 import { Input } from '../components/input/Input';
 import { createBrowserHistory } from 'history';
 
+import { CircularProgress } from '@material-ui/core';
+
 // Routs in json
 import Applicant from '../Applicant.json';
 
@@ -18,9 +20,12 @@ import { Error } from './ErrorHandling';
 import '../styles.css';
 
 export default function VerificationEmail() {
+  // This hook use for check click button or not
+  const [isClick, setIsClick] = useState(false);
+
   // This hook, use for input class name when the client input the wrong data
   const [className, setClassName] = useState('input');
-  
+
   // This hook use for save input data
   const [code, setCode] = useState({});
 
@@ -51,6 +56,7 @@ export default function VerificationEmail() {
     if (code_valid.massage != '') {
       setClassName('wrong-input');
     } else {
+      setIsClick(true);
       setClassName('input');
     }
   };
@@ -74,7 +80,10 @@ export default function VerificationEmail() {
           </div>
           <p className="resend-code"> Resend code</p>
           <div className="verificition-button">
-            <Button className="green-btn" name="Verify" />
+            <Button
+              className="green-btn"
+              name={isClick ? <CircularProgress /> : 'Verify'}
+            />
           </div>
         </form>
       </div>

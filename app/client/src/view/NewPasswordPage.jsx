@@ -6,6 +6,8 @@ import { Input } from '../components/input/Input';
 import { OrItem } from '../components/orItem/OrItem';
 import { Link } from 'react-router-dom';
 
+import { CircularProgress } from '@material-ui/core';
+
 // Routs in json
 import applicant from '../Applicant.json';
 
@@ -13,6 +15,9 @@ import applicant from '../Applicant.json';
 import { Error } from './ErrorHandling';
 
 export default function NewPasswordPage() {
+  // This hook use for check click button or not
+  const [isClick, setIsClick] = useState(false);
+
   // This hook, use for inputs class name when the client input the wrong data
   const [className, setClassName] = useState({
     passwordClass: 'input',
@@ -33,10 +38,10 @@ export default function NewPasswordPage() {
     confirm: false,
   });
   //this function is for switching for show or hide password
-  const handleClickShowPassword = (e) => {
+  const handleClickShowPassword = e => {
     let name = e.currentTarget.id;
     console.log(name);
-    if (name == "Password") {
+    if (name == 'Password') {
       setShowPassword({
         ...showPassword,
         password: !showPassword.password,
@@ -82,6 +87,9 @@ export default function NewPasswordPage() {
       passwordClass: password_box,
       confirmPasswordClass: confirm_password_box,
     });
+    if (password_valid.massage == '' && confirm_password_valid.massage == '') {
+      setIsClick(true);
+    }
   };
 
   return (
@@ -92,7 +100,7 @@ export default function NewPasswordPage() {
         <form onSubmit={handleSubmit} autoComplete="off">
           <Input
             name="Password"
-            type={showPassword.password ? "text" : "password"}
+            type={showPassword.password ? 'text' : 'password'}
             placeholder="******"
             handleChange={handleInput}
             className={className.passwordClass}
@@ -105,7 +113,7 @@ export default function NewPasswordPage() {
             <Input
               name="ConfirmPassword"
               placeholder="******"
-              type={showPassword.confirm ? "text" : "password"}
+              type={showPassword.confirm ? 'text' : 'password'}
               handleChange={handleInput}
               className={className.confirmPasswordClass}
               error={formErr['confirm_password_valid_Massage']}
@@ -116,7 +124,11 @@ export default function NewPasswordPage() {
           </div>
 
           <div className="nwpass-input-button">
-            <Button className="green-btn" name="save" icon={false} />
+            <Button
+              className="green-btn"
+              name={isClick ? <CircularProgress /> : 'save'}
+              icon={false}
+            />
           </div>
         </form>
 

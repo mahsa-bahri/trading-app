@@ -5,6 +5,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 
+import { CircularProgress } from '@material-ui/core';
+
 // Components
 import { Link } from 'react-router-dom';
 import { Button } from '../components/button/Button';
@@ -17,6 +19,9 @@ import Applicant from '../Applicant.json';
 import { Error } from './ErrorHandling';
 
 export default function ForgetPassword() {
+  // This hook use for check click button or not
+  const [isClick, setIsClick] = useState(false);
+
   // This hook use for snackbar
   const [openSnackBar, setOpenSnackBar] = useState(false);
 
@@ -65,6 +70,7 @@ export default function ForgetPassword() {
     if (email_valid.massage != '') {
       setClassName('wrong-input');
     } else {
+      setIsClick(true);
       setClassName('input');
     }
   };
@@ -89,7 +95,11 @@ export default function ForgetPassword() {
               />
             </div>
             <div className="frgtPage-distance-button">
-              <Button className="green-btn" name="send" icon={false} />
+              <Button
+                className="green-btn"
+                name={isClick ? <CircularProgress /> : 'send'}
+                icon={false}
+              />
             </div>
           </form>
           <p className="frgtPage-link">
