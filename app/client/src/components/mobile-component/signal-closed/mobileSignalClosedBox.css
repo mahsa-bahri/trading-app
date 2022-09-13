@@ -1,7 +1,6 @@
-
 .mb-signalBox-closedSignals-box {
   width: 85vw;
-  height: 113px;
+  height: max-content;
   left: 26px;
   top: 910px;
   display: flex;
@@ -17,8 +16,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 60px;
 }
+
 .mb-buyStrategy-first-row-img {
   position: relative;
   align-self: flex-start;
@@ -46,6 +46,12 @@
   height: 30px;
   border-radius: 30px;
   border-radius: 1px solid grey;
+}
+
+.mb-more-icon-signalbox {
+  width: 15px;
+  align-self: center;
+  margin: 10px 0;
 }
 
 .mb-signalBox-column,
@@ -110,4 +116,49 @@
   color: #313D4C;
   padding: 5px;
   margin-right: 20px;
+}
+
+.mb-signalBox-closedSignals-box .second-row {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  /* identical to box height */
+  width: 100%;
+  color: #000000;
+}
+
+.second-row .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mb-signalbox-profit {
+  width: 40%;
+  border-style: solid;
+  border-color: rgb(198, 194, 194);
+  border-width: 1px 1px 1px 0;
+  padding: 10px 15px;
+}
+
+.mb-signalbox-date {
+  width: 60%;
+  border-style: solid;
+  border-color: rgb(198, 197, 197);
+  border-width: 1px 0 1px 1px;
+  padding:20px 10px;
+  font-size: 14px;
+}
+
+.mb-signalbox-chartbox {
+  width: 75vw;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  align-self: center;
 }

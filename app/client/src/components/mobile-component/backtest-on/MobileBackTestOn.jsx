@@ -7,28 +7,43 @@ import { MobileButton } from "../button/MobileButton";
 //styles
 import './mobileBackTestOn.css';
 
-export function MobileBackTestOn({ handleClick, moreBackTest, bigImg, smallImg }) {
-
-  return (
-    <div className="mb-buyStrategy-backtest">
-      <div className="mb-buyStrategy-first-row">
-        <div className="row">
-          <div className="mb-buyStrategy-first-row-img">
-            <img className="mb-buyStrategy-img-big" src={bigImg} />
-            <img className="mb-buyStrategy-img-small" src={smallImg} />
+export function MobileBackTestOn({ handleClick, moreBackTest, bigImg, smallImg, hasIcon }) {
+  if (hasIcon) {
+    return (
+      <div className="mb-buyStrategy-backtest">
+        <div className="mb-buyStrategy-first-row">
+          <div className="row">
+            <div className="mb-buyStrategy-first-row-img">
+              <img className="mb-buyStrategy-img-big" src={bigImg} />
+              <img className="mb-buyStrategy-img-small" src={smallImg} />
+            </div>
+            <span className="big">USDJPY </span><span className="small"> in 1 hour time frame</span>
           </div>
-          <span className="big">USDJPY </span><span className="small"> in 1 hour time frame</span>
-        </div>
-        {!moreBackTest ? <img className='mb-more-icon-buyStrategy'
-          aria-label="more"
-          id='moreBacktest'
-          onClick={handleClick}
-          src={more} /> : <img className='mb-more-icon-buyStrategy'
-            aria-label="less"
-            id="lessBacktest"
+          {!moreBackTest ? <img className='mb-more-icon-buyStrategy'
+            aria-label="more"
+            id='moreBacktest'
             onClick={handleClick}
-            src={less} />}
+            src={more} /> : <img className='mb-more-icon-buyStrategy'
+              aria-label="less"
+              id="lessBacktest"
+              onClick={handleClick}
+              src={less} />}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }else{
+    return (
+      <div className="mb-buyStrategy-backtest">
+        <div className="mb-buyStrategy-first-row">
+          <div className="row">
+            <div className="mb-buyStrategy-first-row-img">
+              <img className="mb-buyStrategy-img-big" src={bigImg} />
+              <img className="mb-buyStrategy-img-small" src={smallImg} />
+            </div>
+            <span className="big">USDJPY </span><span className="small"> in 1 hour time frame</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }

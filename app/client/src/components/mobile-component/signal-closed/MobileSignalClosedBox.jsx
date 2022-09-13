@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 //style
-import './mobileSignalBox.css';
+import './mobileSignalClosedBox.css';
 //icon
 import more from '../../../assets/icon/more.svg';
 import less from '../../../assets/icon/less.svg';
 
-export function MobileSignalBox({ bigImg, smallImg, hasMore }) {
+export function MobileSignalClosedBox({ bigImg, smallImg, hasMore, chartimg }) {
   const [moreInfo, setMoreInfo] = useState(false);
   const handleClick = () => {
     setMoreInfo(!moreInfo);
@@ -64,14 +64,32 @@ export function MobileSignalBox({ bigImg, smallImg, hasMore }) {
             <pre>Stop loss  <span >1.76</span></pre>
           </div>
         </div>
-
-
+        {moreInfo&&<>
+        <div className="second-row">
+          <div className="mb-signalbox-profit">
+            <div className="row"><span>profit 1 </span><span> 0.6780</span></div>
+            <div className="row"><span>profit 1 </span><span> 0.6780</span></div>
+            <div className="row"><span>profit 1 </span><span> 0.6780</span></div>
+          </div>
+          <div className="mb-signalbox-date">
+            <div className="row"><span>sent on </span><span>13july 2022 18:45</span></div>
+            <div className="row"><span>sent on </span><span>13july 2022 18:45</span></div>
+          </div>
+        </div>
+        <span style={{alignSelf:'center'}}>signal in chart</span>
+        <div className="mb-signalbox-chartbox">
+          <img className="mb-signalbox-chartbox"
+            src={chartimg} />
+        </div>
+        </>}
         {!moreInfo ? <img
+          className='mb-more-icon-signalbox'
           aria-label="more"
           id='moreInfo'
           onClick={handleClick}
           src={more} /> : <img
-          aria-label="more"
+          className='mb-more-icon-signalbox'
+          aria-label="less"
           id='lessInfo'
           onClick={handleClick}
           src={less} />}

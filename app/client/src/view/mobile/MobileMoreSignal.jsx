@@ -9,17 +9,44 @@ import info from '../../assets/icon/info.svg';
 import us from '../../assets/images/american-flag.jpg';
 import japan from '../../assets/images/japan-flag.jpg';
 import chart1 from '../../assets/images/blue-chart.jpg';
+import chart2 from '../../assets/images/chart2.jpg';
 //link
 import applicant from '../../Applicant.json';
 import { MobileButton } from "../../components/mobile-component/button/MobileButton";
 import { MobileBottomNav } from "../../components/mobile-component/bottom-navbar/MobileBottomNav";
-import { MobileSignalBox } from "../../components/mobile-component/signal-box/MobileSignalBox";
+import { MobileSignalClosedBox } from "../../components/mobile-component/signal-closed/MobileSignalClosedBox";
 
 export default function MobileMoreSignal() {
-  
+  const [navChoose, setNavChoose] = useState({
+    watchlist: false,
+    filter: false,
+    home: true,
+    strategy: false,
+    signal: false
+  });
   let name = 'classic name1';
   let author = 'john copper';
   const noLiveNote = "now this strategy does'nt have any live signal. "
+  const handleClick = (e) => {
+    e.preventDefault();
+    const id = e.currentTarget.id;
+    if (id == 'watchlist' || id == 'filter'
+      || id == 'home' || id == 'strategy' || id == 'signal') {
+      setNavChoose({
+        watchlist: false,
+        filter: false,
+        home: false,
+        strategy: false,
+        signal: false,
+      });
+      setNavChoose(prev => {
+        return {
+          ...prev,
+          [id]: true
+        }
+      })
+    }
+  }
   return (
     <div className="tradino">
       <div className="mb-moreSignal-content ">
@@ -31,29 +58,29 @@ export default function MobileMoreSignal() {
 
           <div className="mb-moreSignal-title-row">
             <h4>live signals</h4>
-            <img className='mb-info-icon-moreSignal'
+            <img
               aria-label="info"
               src={info} />
           </div>
           <div className="mb-moreSignal-closedSignals blur">
-            <MobileSignalBox bigImg={us} smallImg={japan} hasMore={true} />
-            <MobileSignalBox bigImg={us} smallImg={japan} hasMore={true} />
+            <MobileSignalClosedBox bigImg={us} smallImg={japan} hasMore={true} />
+            <MobileSignalClosedBox bigImg={us} smallImg={japan} hasMore={true} />
           </div>
           <div className="mb-buyStrategy-big-line"></div>
-          <MobileButton className={'mb-big-green-btn'} name={'Buy strategy now'} />
           <div className="mb-moreSignal-title-row">
             <h4>closed signals</h4>
-            <img className='mb-info-icon-moreSignal'
+            <img
               aria-label="info"
               src={info} />
           </div>
           <div className="mb-moreSignal-closedSignals">
-            <MobileSignalBox bigImg={us} smallImg={japan} hasMore={true} />
-            <MobileSignalBox bigImg={us} smallImg={japan} hasMore={true} />
+            <MobileSignalClosedBox bigImg={us} smallImg={japan} hasMore={true} chartimg={chart2} />
+            <MobileSignalClosedBox bigImg={us} smallImg={japan} hasMore={true} chartimg={chart2} />
           </div>
           <div className="mb-general-bottom-space"></div>
         </div>
       </div>
+      <MobileBottomNav navChoose={navChoose} handleClick={handleClick} />
     </div>
   );
 }
