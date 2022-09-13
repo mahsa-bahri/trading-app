@@ -13,7 +13,7 @@ import chart1 from '../../assets/images/blue-chart.jpg';
 import applicant from '../../Applicant.json';
 import { MobileButton } from "../../components/mobile-component/button/MobileButton";
 import { MobileBottomNav } from "../../components/mobile-component/bottom-navbar/MobileBottomNav";
-import { MobileSignalClosedBox } from "../../components/mobile-component/signal-closed/MobileSignalClosedBox";
+import {  MobileSignalBox } from "../../components/mobile-component/signal-box/MobileSignalBox";
 import { MobileBackTestOn } from "../../components/mobile-component/backtest-on/MobileBackTestOn";
 import { MobileBackTestInfo } from "../../components/mobile-component/backtest-info/MobileBackTestInfo";
 
@@ -148,16 +148,16 @@ export default function MobileBuyStrategy() {
             <Link to={applicant.mobileMoreSignal}><h5>more</h5></Link>
           </div>
           <div className="mb-buyStrategy-closedSignals">
-            <MobileSignalClosedBox bigImg={us} smallImg={japan} />
-            <MobileSignalClosedBox bigImg={us} smallImg={japan} />
+            <MobileSignalBox bigImg={us} smallImg={japan} />
+            <MobileSignalBox bigImg={us} smallImg={japan} />
           </div>
           <div className="mb-buyStrategy-title-row">
             <h4>live signals</h4>
             <Link to={applicant.mobileMoreSignal}><h5>more</h5></Link>
           </div>
           <div className="mb-buyStrategy-closedSignals blur">
-            <MobileSignalClosedBox bigImg={us} smallImg={japan} />
-            <MobileSignalClosedBox bigImg={us} smallImg={japan} />
+            <MobileSignalBox bigImg={us} smallImg={japan} isLive={true} />
+            <MobileSignalBox bigImg={us} smallImg={japan} isLive={true}/>
           </div>
           <div className="mb-general-bottom-space"></div>
         </div>

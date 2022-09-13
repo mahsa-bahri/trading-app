@@ -14,7 +14,7 @@ import chart2 from '../../assets/images/chart2.jpg';
 import applicant from '../../Applicant.json';
 import { MobileButton } from "../../components/mobile-component/button/MobileButton";
 import { MobileBottomNav } from "../../components/mobile-component/bottom-navbar/MobileBottomNav";
-import { MobileSignalClosedBox } from "../../components/mobile-component/signal-closed/MobileSignalClosedBox";
+import {MobileSignalBox } from "../../components/mobile-component/signal-box/MobileSignalBox";
 
 export default function MobileMoreSignal() {
   const [navChoose, setNavChoose] = useState({
@@ -63,8 +63,8 @@ export default function MobileMoreSignal() {
               src={info} />
           </div>
           <div className="mb-moreSignal-closedSignals blur">
-            <MobileSignalClosedBox bigImg={us} smallImg={japan} hasMore={true} />
-            <MobileSignalClosedBox bigImg={us} smallImg={japan} hasMore={true} />
+            <MobileSignalBox bigImg={us} smallImg={japan} hasMore={true} chartimg={chart2} isLive={true}/>
+            <MobileSignalBox bigImg={us} smallImg={japan} hasMore={true} chartimg={chart2} isLive={true}/>
           </div>
           <div className="mb-buyStrategy-big-line"></div>
           <div className="mb-moreSignal-title-row">
@@ -73,9 +73,9 @@ export default function MobileMoreSignal() {
               aria-label="info"
               src={info} />
           </div>
-          <div className="mb-moreSignal-closedSignals">
-            <MobileSignalClosedBox bigImg={us} smallImg={japan} hasMore={true} chartimg={chart2} />
-            <MobileSignalClosedBox bigImg={us} smallImg={japan} hasMore={true} chartimg={chart2} />
+          <div className="mb-moreSignal-closedSignals ">
+            <MobileSignalBox bigImg={us} smallImg={japan} hasMore={true} chartimg={chart2} />
+            <MobileSignalBox bigImg={us} smallImg={japan} hasMore={true} chartimg={chart2} />
           </div>
           <div className="mb-general-bottom-space"></div>
         </div>

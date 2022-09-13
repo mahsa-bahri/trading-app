@@ -814,6 +814,9 @@
   align-items: flex-end;
 }
 
+body {
+  box-sizing: border-box;
+}
 
 .mb-buyStrategy-closedSignals {
   height: 113px;
