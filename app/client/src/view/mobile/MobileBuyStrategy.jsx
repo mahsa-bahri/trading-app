@@ -1,5 +1,6 @@
 //in this copmpnent we make the buy strategy page
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 //icon
 import more from '../../assets/icon/more.svg';
 import less from '../../assets/icon/less.svg';
@@ -7,7 +8,6 @@ import info from '../../assets/icon/info.svg';
 //image
 import us from '../../assets/images/american-flag.jpg';
 import japan from '../../assets/images/japan-flag.jpg';
-import strategyImg from '../../assets/images/strategy-result.jpg';
 import chart1 from '../../assets/images/blue-chart.jpg';
 //link
 import applicant from '../../Applicant.json';
@@ -91,7 +91,7 @@ export default function MobileBuyStrategy() {
           </div>
           <h4>Backtest info</h4>
           <div className="mb-buyStrategy-backtestInfo">
-            <MobileBackTestInfo />
+            <MobileBackTestInfo moreInfo={moreInfo}/>
 
             {moreInfo && <>
               <div className="mb-buyStrategy-backtestInfo-items">
@@ -144,7 +144,7 @@ export default function MobileBuyStrategy() {
           <MobileButton className={'mb-big-green-btn'} name={'Buy strategy now'} />
           <div className="mb-buyStrategy-title-row">
             <h4>closed signals</h4>
-            <h5>more</h5>
+            <Link to={applicant.mobileMoreSignal}><h5>more</h5></Link>
           </div>
           <div className="mb-buyStrategy-closedSignals">
             <MobileSignalBox bigImg={us} smallImg={japan} />
@@ -152,7 +152,7 @@ export default function MobileBuyStrategy() {
           </div>
           <div className="mb-buyStrategy-title-row">
             <h4>live signals</h4>
-            <h5>more</h5>
+            <Link to={applicant.mobileMoreSignal}><h5>more</h5></Link>
           </div>
           <div className="mb-buyStrategy-closedSignals blur">
             <MobileSignalBox bigImg={us} smallImg={japan} />

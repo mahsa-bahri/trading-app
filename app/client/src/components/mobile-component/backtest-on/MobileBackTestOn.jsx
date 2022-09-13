@@ -4,6 +4,8 @@ import more from '../../../assets/icon/more.svg';
 import less from '../../../assets/icon/less.svg';
 //component
 import { MobileButton } from "../button/MobileButton";
+//styles
+import './mobileBackTestOn.css';
 
 export function MobileBackTestOn({ handleClick, moreBackTest, bigImg, smallImg }) {
 

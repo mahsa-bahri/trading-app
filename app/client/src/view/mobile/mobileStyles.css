@@ -657,14 +657,16 @@
 }
 
 /* mobile buy strategy styles*/
-.mb-buyStrategy-content {
+.mb-buyStrategy-content,
+.mb-moreSignal-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.mb-buyStrategy-grey-content {
+.mb-buyStrategy-grey-content,
+.mb-moreSignal-grey-content {
   width: 100vw;
   background: #F7F7F7;
   border-radius: 40px 40px 0px 0px;
@@ -700,24 +702,6 @@
   background-clip: text;
 }
 
-.mb-buyStrategy-backtest {
-  width: 85vw;
-  height: max-content;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding-right: 5%;
-}
-
-.mb-buyStrategy-first-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-}
 
 .mb-buyStrategy-backtest .line {
   background-color: rgb(174, 174, 174);
@@ -725,71 +709,6 @@
   height: 1px;
   text-align: center;
   margin: 0 9px;
-}
-
-.mb-buyStrategy-first-row .row {
-  align-self: flex-start;
-  justify-self: flex-start;
-  /**/
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-
-}
-
-.mb-buyStrategy-first-row-img {
-  position: relative;
-  align-self: flex-start;
-  justify-self: flex-start;
-  width: 40px;
-  height: 40px;
-  margin-right: 10%;
-}
-
-.mb-buyStrategy-img-big {
-  position: absolute;
-  top: 10px;
-  left: 40%;
-  width: 30px;
-  height: 30px;
-  border-radius: 25px;
-  z-index: 2;
-}
-
-.mb-buyStrategy-img-small {
-  position: absolute;
-  top: 35px;
-  left: 46%;
-  width: 60px;
-  height: 30px;
-  border-radius: 30px;
-  border-radius: 1px solid grey;
-}
-
-.mb-buyStrategy-first-row .big {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  color: #313D4C;
-  width: 70px;
-  margin-left: 10px;
-}
-
-.mb-buyStrategy-first-row .small {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
-  /* identical to box height */
-  letter-spacing: 0.02em;
-  color: #313D4C;
-  width: 120px;
 }
 
 .mb-more-icon-buyStrategy {
@@ -842,7 +761,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   text-align: center;
-  margin:5px;
+  margin: 5px;
   padding: 5px;
 }
 
@@ -884,12 +803,18 @@
   line-height: 14px;
   color: #000000;
 }
-.mb-buyStrategy-title-row{
+
+.mb-buyStrategy-title-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
 }
+
+.mb-buyStrategy-title-row h5 {
+  color: #000000;
+}
+
 .mb-buyStrategy-closedSignals {
   height: 113px;
   width: 100vw;
