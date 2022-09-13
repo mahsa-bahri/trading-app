@@ -63,7 +63,7 @@ export default function App() {
           <Route path={Applicant.mobileFisrtPage} component={MobileFirstPage} />
           <Route path={Applicant.mobileStrategyPage} component={MobileStrategyPage}/>
           <Route path={Applicant.mobileBuyStrategy} component={MobileBuyStrategy}/>
-          <Route path={Applicant.mobileForgetPassword} component={MobileForgetPassword} />
+          <Route path={Applicant.mobileforgetPassword} component={MobileForgetPassword} />
           <Route component={Error404Page} />
           <Route path={Applicant.defualt} component={MobileLogin}/>
           {/*<Route path={Applicant.defualt} component={MobileLogin} />*/}
