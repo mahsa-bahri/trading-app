@@ -13,6 +13,9 @@ import chart1 from '../../assets/images/blue-chart.jpg';
 import applicant from '../../Applicant.json';
 import { MobileButton } from "../../components/mobile-component/button/MobileButton";
 import { MobileBottomNav } from "../../components/mobile-component/bottom-navbar/MobileBottomNav";
+import { MobileSignalBox } from "../../components/mobile-component/signal-box/MobileSignalBox";
+import { MobileBackTestOn } from "../../components/mobile-component/backtest-on/MobileBackTestOn";
+import { MobileBackTestInfo } from "../../components/mobile-component/backtest-info/MobileBackTestInfo";
 
 export default function MobileBuyStrategy() {
   const [moreBackTest, setMoreBackTest] = useState(false);
@@ -50,6 +53,8 @@ export default function MobileBuyStrategy() {
       setMoreInfo(!moreInfo);
     }
   }
+  const note = "  In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.In publishing and graphic design.";
+
   return (
     <div className="tradino">
       <div className="mb-buyStrategy-content">
@@ -60,38 +65,20 @@ export default function MobileBuyStrategy() {
         <div className="mb-buyStrategy-grey-content">
           <h4>Backtest on</h4>
           <div className="mb-buyStrategy-backtest">
-            <div className="mb-buyStrategy-first-row">
-              <div className="row">
-                <div className="mb-buyStrategy-first-row-img">
-                  <img className="mb-buyStrategy-img-big" src={us} />
-                  <img className="mb-buyStrategy-img-small" src={japan} />
-                </div>
-                <span className="big">USDJPY </span><span className="small"> in 1 hour time frame</span>
-              </div>
-              {!moreBackTest ? <img className='mb-more-icon-buyStrategy'
-                aria-label="more"
-                id='moreBacktest'
-                onClick={handleClick}
-                src={more} /> : <img className='mb-more-icon-buyStrategy'
-                  aria-label="less"
-                  id="lessBacktest"
-                  onClick={handleClick}
-                  src={less} />}
-            </div>
+            <MobileBackTestOn
+              bigImg={us}
+              smallImg={japan}
+              moreBackTest={moreBackTest}
+              handleClick={handleClick} />
             {moreBackTest && <><div className="line"></div>
-              <div className="mb-buyStrategy-first-row">
-                <div className="row">
-                  <div className="mb-buyStrategy-first-row-img">
-                    <img className="mb-buyStrategy-img-big" src={us} />
-                    <img className="mb-buyStrategy-img-small" src={japan} />
-                  </div>
-                  <span className="big">USDJPY </span><span className="small"> in 1 hour time frame</span>
-                </div>
-              </div>
+              <MobileBackTestOn
+                bigImg={us}
+                smallImg={japan}
+                moreBackTest={moreBackTest}
+                handleClick={handleClick} />
               <div className="line"></div>
               <MobileButton className={'mb-small-green-btn'} name={'create new backteat'} />
             </>
-
             }
           </div>
           <h4>Money trend</h4>
@@ -104,24 +91,7 @@ export default function MobileBuyStrategy() {
           </div>
           <h4>Backtest info</h4>
           <div className="mb-buyStrategy-backtestInfo">
-            <div className="mb-buyStrategy-backtestInfo-items">
-              <p className="space-between">Win Rate     <span style={{ color: 'green' }}>63%</span></p>
-            </div>
-            <div className="mb-buyStrategy-backtestInfo-items">
-              <p className="space-between">Profit      <span style={{ color: 'green' }}>300%</span></p>
-            </div>
-            <div className="mb-buyStrategy-backtestInfo-items">
-              <p className="space-between">Sharp ratio      <span style={{ color: 'green' }}>1.9</span></p>
-            </div>
-            <div className="mb-buyStrategy-backtestInfo-items">
-              <p className="space-between">Risk/Reward    <span style={{ color: 'red' }}>1.05</span></p>
-            </div>
-            <div className="mb-buyStrategy-backtestInfo-items">
-              <p className="space-between">Max darwdown    <span style={{ color: 'green' }}>10%</span></p>
-            </div>
-            <div className="mb-buyStrategy-backtestInfo-items">
-              <p className="space-between">multi time frame    <span>No</span></p>
-            </div>
+            <MobileBackTestInfo />
 
             {moreInfo && <>
               <div className="mb-buyStrategy-backtestInfo-items">
@@ -168,12 +138,7 @@ export default function MobileBuyStrategy() {
           </div>
           <div className="mb-buyStrategy-note">
             <span>more frome creator</span>
-            <p>
-              In publishing and graphic design, Lorem ipsum is a placeholder text commonly used
-              to demonstrate the form of a document or a typeface without relying on meaningful content.
-              Lorem ipsum may be used as
-              a placeholder before final copy is available.In publishing and graphic design.
-            </p>
+            <p>{note}</p>
           </div>
           <div className="mb-buyStrategy-big-line"></div>
           <MobileButton className={'mb-big-green-btn'} name={'Buy strategy now'} />
@@ -182,112 +147,16 @@ export default function MobileBuyStrategy() {
             <h5>more</h5>
           </div>
           <div className="mb-buyStrategy-closedSignals">
-            <div className="mb-buyStrategy-closedSignals-box">
-              <div className="first-row">
-                <div className="mb-buyStrategy-first-row-img">
-                  <img className="mb-buyStrategy-img-big" src={us} />
-                  <img className="mb-buyStrategy-img-small" src={japan} />
-                </div>
-                <div className="mb-buyStrategy-column">
-                  <span className="name">USDJPY </span>
-                  <span className="date">13july 2022 18:30</span>
-                </div>
-                <p className="mb-buyStrategy-pips">
-                  +70Pips (+0.18%)
-                </p>
-              </div>
-              <div className="first-row">
-                <div className="mb-buyStrategy-column2">
-                  <pre>Buy in        0.6789</pre>
-                  <pre>Risk/Reward  <span style={{ color: '#6ffed1ba' }}>1.76</span></pre>
-                </div>
-                <div className="mb-buyStrategy-column2">
-                  <pre>profit      0.6789</pre>
-                  <pre>Stop loss  <span >1.76</span></pre>
-                </div>
-              </div>
-            </div>
-            <div className="mb-buyStrategy-closedSignals-box">
-              <div className="first-row">
-                <div className="mb-buyStrategy-first-row-img">
-                  <img className="mb-buyStrategy-img-big" src={us} />
-                  <img className="mb-buyStrategy-img-small" src={japan} />
-                </div>
-                <div className="mb-buyStrategy-column">
-                  <span className="name">USDJPY </span>
-                  <span className="date">13july 2022 18:30</span>
-                </div>
-                <p className="mb-buyStrategy-pips">
-                  +70Pips (+0.18%)
-                </p>
-              </div>
-              <div className="first-row">
-                <div className="mb-buyStrategy-column2">
-                  <pre>Buy in        0.6789</pre>
-                  <pre>Risk/Reward  <span style={{ color: '#6ffed1ba' }}>1.76</span></pre>
-                </div>
-                <div className="mb-buyStrategy-column2">
-                  <pre>profit      0.6789</pre>
-                  <pre>Stop loss  <span >1.76</span></pre>
-                </div>
-              </div>
-            </div>
+            <MobileSignalBox bigImg={us} smallImg={japan} />
+            <MobileSignalBox bigImg={us} smallImg={japan} />
           </div>
           <div className="mb-buyStrategy-title-row">
             <h4>live signals</h4>
             <h5>more</h5>
           </div>
           <div className="mb-buyStrategy-closedSignals blur">
-            <div className="mb-buyStrategy-closedSignals-box">
-              <div className="first-row">
-                <div className="mb-buyStrategy-first-row-img">
-                  <img className="mb-buyStrategy-img-big" src={us} />
-                  <img className="mb-buyStrategy-img-small" src={japan} />
-                </div>
-                <div className="mb-buyStrategy-column">
-                  <span className="name">USDJPY </span>
-                  <span className="date">13july 2022 18:30</span>
-                </div>
-                <p className="mb-buyStrategy-pips">
-                  +70Pips (+0.18%)
-                </p>
-              </div>
-              <div className="first-row">
-                <div className="mb-buyStrategy-column2">
-                  <pre>Buy in        0.6789</pre>
-                  <pre>Risk/Reward  <span style={{ color: '#6ffed1ba' }}>1.76</span></pre>
-                </div>
-                <div className="mb-buyStrategy-column2">
-                  <pre>profit      0.6789</pre>
-                  <pre>Stop loss  <span >1.76</span></pre>
-                </div>
-              </div>
-            </div>
-            <div className="mb-buyStrategy-closedSignals-box">
-              <div className="first-row">
-                <div className="mb-buyStrategy-first-row-img">
-                  <img className="mb-buyStrategy-img-big" src={us} />
-                  <img className="mb-buyStrategy-img-small" src={japan} />
-                </div>
-                <div className="mb-buyStrategy-column">
-                  <span className="name">USDJPY </span>
-                  <span className="date">13july 2022 18:30</span>
-                </div>
-                <p className="mb-buyStrategy-pips">
-                  +70Pips (+0.18%)
-                </p>
-              </div>
-              <div className="first-row">
-                <div className="mb-buyStrategy-column2">
-                  <pre>Buy in        0.6789</pre>
-                  <pre>Risk/Reward  <span style={{ color: '#6ffed1ba' }}>1.76</span></pre>
-                </div>
-                <div className="mb-buyStrategy-column2">
-                  <pre>profit      0.6789</pre>
-                  <pre>Stop loss  <span >1.76</span></pre>
-                </div>
-              </div>
-            </div>
+            <MobileSignalBox bigImg={us} smallImg={japan} />
+            <MobileSignalBox bigImg={us} smallImg={japan} />
           </div>
           <div className="mb-general-bottom-space"></div>
         </div>

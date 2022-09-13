@@ -970,6 +970,7 @@ label.logo {
   .error404-sorry-txt {
     font-size: 14px;
     margin-bottom: 10vh;
+    width:80vw;
   }
 
   .error404-report-btn,
