@@ -656,7 +656,7 @@
   margin-top: 10px;
 }
 
-/* mobile buy strategy styles*/
+/* mobile buy strategy styles and a few mobile more Signal page*/
 .mb-buyStrategy-content,
 .mb-moreSignal-content {
   display: flex;
@@ -684,7 +684,8 @@
   width: 85vw;
 }
 
-.mb-buyStrategy-green-title-content {
+.mb-buyStrategy-green-title-content,
+.mb-moreSignal-green-title-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -725,7 +726,8 @@
   padding: 5px;
 }
 
-.mb-info-icon-moneyTrend {
+.mb-info-icon-moneyTrend,
+.mb-info-icon-moreSignal {
   width: 15px;
   position: absolute;
   box-sizing: border-box;
@@ -811,9 +813,6 @@
   align-items: flex-end;
 }
 
-.mb-buyStrategy-title-row h5 {
-  color: #000000;
-}
 
 .mb-buyStrategy-closedSignals {
   height: 113px;
@@ -840,4 +839,24 @@
 
 .blur {
   filter: blur(2px);
+}
+
+/*mobile more Signal page*/
+
+.mb-moreSignal-title-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.mb-moreSignal-closedSignals {
+  width: 100vw;
+  margin-left: 9vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 15px;
 }
