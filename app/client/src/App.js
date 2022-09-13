@@ -26,6 +26,7 @@ import MobileAutoPageAnalyze from './view/mobile/MoblieAutoPageAnalyze';
 import MobileFirstPage from './view/mobile/MobileFirstPage';
 import MobileStrategyPage from './view/mobile/MobileStrategyPage';
 import MobileBuyStrategy from './view/mobile/MobileBuyStrategy';
+import MobileMoreSignal from './view/mobile/MobileMoreSignal';
 // Routs in json
 import Applicant from "./Applicant.json"
 
@@ -36,7 +37,7 @@ import './view/mobile/mobileStyles.css'
 
 export default function App() {
 
-  const [windowWidth, setWindowWidth] = useState(1150);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(()=>{
     if (window.location.pathname == '/') {
@@ -68,8 +69,9 @@ export default function App() {
           <Route path={Applicant.mobileSearchPage} component={MobileSearchPage} />
           <Route path={Applicant.mobileFisrtPage} component={MobileFirstPage} />
           <Route path={Applicant.mobileStrategyPage} component={MobileStrategyPage}/>
+          <Route path={Applicant.mobileMoreSignal} component={MobileMoreSignal}/>
           <Route path={Applicant.mobileBuyStrategy} component={MobileBuyStrategy}/>
-          <Route path={Applicant.mobileForgetPassword} component={MobileForgetPassword} />
+          <Route path={Applicant.mobileforgetPassword} component={MobileForgetPassword} />
           <Route component={Error404Page} />
           <Route path={Applicant.defualt} component={MobileLogin}/>
           {/*<Route path={Applicant.defualt} component={MobileLogin} />*/}

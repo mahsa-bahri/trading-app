@@ -11,6 +11,8 @@ import applicant from '../../Applicant.json';
 import { Error } from '../ErrorHandling';
 //Icons
 import checkmark from '../../assets/icon/checkmark.svg';
+//constorller
+import { AccountController } from '../../../../Controllers/AccountController.js';
 
 export default function MobileSignup() {
   //This hook is used to see whether the privacy checkbo is checked or not 
@@ -102,6 +104,20 @@ export default function MobileSignup() {
       confirmPasswordClass: confirm_password_box,
       privacyCheckClass: privacy_policy_box,
     });
+    // If all inputs have no error, send to Signup controller to post data
+    if (
+      user_name_valid.massage == '' &&
+      email_valid.massage == '' &&
+      password_valid.massage == '' &&
+      confirm_password_valid.massage == ''
+    ) {
+      const response = await AccountController.Signup(
+        inputForm['Username'],
+        inputForm['Email'],
+        inputForm['Password'],
+        inputForm['ConfirmPassword'],
+      );
+    }
   };
 
   return (

@@ -90,7 +90,7 @@
 .mb-newPassPge-content,
 .mb-signup-content,
 .mb-verifyemail-content {
-  height: max-content;
+  height: 81vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -100,12 +100,6 @@
   border-radius: 40px 40px 0px 0px;
 }
 
-
-.mb-frgtPage-content,
-.mb-newPassPge-content,
-.mb-verifyemail-content {
-  height: 80vh;
-}
 
 .mb-login-title {
   width: 92px;
@@ -644,8 +638,7 @@
   transform: translateY(-50%);
 }
 
-.mb-strategyPge-gray-content,
-.mb-buyStrategy-grey-content {
+.mb-strategyPge-gray-content {
   width: 100vw;
   background: #F7F7F7;
   border-radius: 40px 40px 0px 0px;
@@ -663,20 +656,36 @@
   margin-top: 10px;
 }
 
-/* mobile buy strategy styles*/
-.mb-buyStrategy-content {
+/* mobile buy strategy styles and a few mobile more Signal page*/
+.mb-buyStrategy-content,
+.mb-moreSignal-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.mb-buyStrategy-grey-content h4 {
-  margin: 40px 20px 0px;
-  align-self: flex-start;
+.mb-buyStrategy-grey-content,
+.mb-moreSignal-grey-content {
+  width: 100vw;
+  background: #F7F7F7;
+  border-radius: 40px 40px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 10px;
+  min-height: 80vh;
+  padding-top: 20px;
 }
 
-.mb-buyStrategy-green-title-content {
+.mb-buyStrategy-grey-content h4 {
+  margin-top: 20px;
+  width: 85vw;
+}
+
+.mb-buyStrategy-green-title-content,
+.mb-moreSignal-green-title-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -685,7 +694,9 @@
 }
 
 .mb-buyStrategy-green-title-content h1,
-.mb-buyStrategy-green-title-content h4 {
+.mb-buyStrategy-green-title-content h4,
+.mb-moreSignal-green-title-content h1,
+.mb-moreSignal-green-title-content h4 {
   font-family: 'Open Sans';
   font-style: normal;
   background: linear-gradient(95.2deg, #6EFDD1 0%, #94FFA6 100%);
@@ -694,24 +705,6 @@
   background-clip: text;
 }
 
-.mb-buyStrategy-backtest {
-  width: 85vw;
-  height: max-content;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding-right: 5%;
-}
-
-.mb-buyStrategy-first-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-}
 
 .mb-buyStrategy-backtest .line {
   background-color: rgb(174, 174, 174);
@@ -721,76 +714,12 @@
   margin: 0 9px;
 }
 
-.mb-buyStrategy-first-row .row {
-  align-self: flex-start;
-  justify-self: flex-start;
-  /**/
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-
-}
-
-.mb-buyStrategy-first-row-img {
-  position: relative;
-  align-self: flex-start;
-  justify-self: flex-start;
-  width: 40px;
-  height: 40px;
-  margin-right: 10%;
-}
-
-.mb-buyStrategy-img-big {
-  position: absolute;
-  top: 10px;
-  left: 40%;
-  width: 30px;
-  height: 30px;
-  border-radius: 25px;
-  z-index: 2;
-}
-
-.mb-buyStrategy-img-small {
-  position: absolute;
-  top: 35px;
-  left: 46%;
-  width: 60px;
-  height: 30px;
-  border-radius: 30px;
-  border-radius: 1px solid grey;
-}
-
-.mb-buyStrategy-first-row .big {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  color: #313D4C;
-  width: 70px;
-  margin-left: 10px;
-}
-
-.mb-buyStrategy-first-row .small {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
-  /* identical to box height */
-  letter-spacing: 0.02em;
-  color: #313D4C;
-  width: 120px;
-}
-
 .mb-more-icon-buyStrategy {
   margin-left: 5vw;
 }
 
 .mb-buyStrategy-moneyTrend {
+  position: relative;
   width: 85vw;
   height: max-content;
   background-color: white;
@@ -799,13 +728,22 @@
   padding: 5px;
 }
 
-.mb-buyStrategy-moneyTrend img {
+.mb-info-icon-moneyTrend {
+  width: 15px;
+  position: absolute;
+  box-sizing: border-box;
+  top: -15px;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.mb-buyStrategy-moneyTrend .image {
   width: 80vw;
 }
 
 .mb-buyStrategy-backtestInfo {
   width: 85vw;
-  height: 185px;
+  height: max-content;
   background: linear-gradient(104.05deg, #6FFED1 1.78%, #94FFA5 100%);
   border-radius: 10px;
   display: flex;
@@ -815,8 +753,9 @@
   column-gap: 5%;
   flex-wrap: wrap;
   text-align: center;
-  padding-top: 10px;
+  padding: 10px;
 }
+
 
 .mb-buyStrategy-backtestInfo-items {
   width: 42%;
@@ -825,6 +764,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   text-align: center;
+  margin: 5px;
   padding: 5px;
 }
 
@@ -837,4 +777,88 @@
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
+}
+
+.mb-buyStrategy-note {
+  margin-top: 20px;
+  width: 75vw;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.mb-buyStrategy-note p {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 14px;
+  color: #000000;
+  padding: 5px;
+}
+
+.mb-buyStrategy-note span {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 14px;
+  color: #000000;
+}
+
+.mb-buyStrategy-title-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+.mb-buyStrategy-closedSignals {
+  height: 113px;
+  width: 100vw;
+  margin-left: 9vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 15px;
+  overflow-x: scroll;
+}
+
+.mb-general-bottom-space {
+  height: 170px;
+}
+
+.mb-buyStrategy-big-line {
+  background-color: rgb(217, 214, 214);
+  width: 100%;
+  height: 1px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+/*mobile more Signal page*/
+
+.mb-moreSignal-title-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  width: 80vw;
+}
+
+.mb-moreSignal-closedSignals {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 15px;
 }

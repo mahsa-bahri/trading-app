@@ -42,11 +42,14 @@
 
 @media screen and (max-width: 655px) {
     .label {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .input, .wrong-input {
         width: 70vw;
+    }
+    .input-error{
+        font-size:12px;
     }
 
 }

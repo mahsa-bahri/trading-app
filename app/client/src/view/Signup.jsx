@@ -20,7 +20,7 @@ import Applicant from '../Applicant.json';
 import { Error } from './ErrorHandling';
 
 // Controller for post data
-import { Controller } from '../../../Controllers/AccountController';
+import { AccountController } from '../../../Controllers/AccountController';
 
 // Style
 import '../styles.css';
