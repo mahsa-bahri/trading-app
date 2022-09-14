@@ -2,7 +2,7 @@
 import React from "react";
 //styles
 import './mobileBackTestInfo.css'
-export function MobileBackTestInfo() {
+export function MobileBackTestInfo({ moreInfo }) {
   return (
     <>
       <div className="mb-moreBacktestInfo-backtestInfo-items">
@@ -23,6 +23,32 @@ export function MobileBackTestInfo() {
       <div className="mb-moreBacktestInfo-backtestInfo-items">
         <p className="space-between">multi time frame    <span>No</span></p>
       </div>
+      {moreInfo && <>
+        <div className="mb-buyStrategy-backtestInfo-items">
+          <p className="space-between">Max darwdown    <span style={{ color: 'green' }}>10%</span></p>
+        </div>
+        <div className="mb-buyStrategy-backtestInfo-items">
+          <p className="space-between">multi time frame    <span>No</span></p>
+        </div>
+        <div className="mb-buyStrategy-backtestInfo-items">
+          <p className="space-between">Max darwdown    <span style={{ color: 'green' }}>10%</span></p>
+        </div>
+        <div className="mb-buyStrategy-backtestInfo-items">
+          <p className="space-between">multi time frame    <span>No</span></p>
+        </div>
+        <div className="mb-buyStrategy-backtestInfo-items">
+          <p className="space-between">Max darwdown    <span style={{ color: 'green' }}>10%</span></p>
+        </div>
+        <div className="mb-buyStrategy-backtestInfo-items">
+          <p className="space-between">multi time frame    <span>No</span></p>
+        </div>
+        <div className="mb-buyStrategy-backtestInfo-items">
+          <p className="space-between">Max darwdown    <span style={{ color: 'green' }}>10%</span></p>
+        </div>
+        <div className="mb-buyStrategy-backtestInfo-items">
+          <p className="space-between">multi time frame    <span>No</span></p>
+        </div>
+      </>}
     </>
   );
 }

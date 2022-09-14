@@ -718,7 +718,8 @@
   margin-left: 5vw;
 }
 
-.mb-buyStrategy-moneyTrend {
+.mb-buyStrategy-moneyTrend,
+.mb-buyStrategy-signalChart {
   position: relative;
   width: 85vw;
   height: max-content;
@@ -845,6 +846,7 @@ body {
 .blur {
   filter: blur(2px);
 }
+
 
 /*mobile more Signal page*/
 
