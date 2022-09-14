@@ -1,5 +1,6 @@
 .mb-signalBox-closedSignals-box {
-  width: 85vw;
+  flex: none;
+  width: 80vw;
   height: max-content;
   left: 26px;
   top: 910px;
@@ -75,7 +76,10 @@
   flex-direction: column;
   width: 30%;
 }
-
+.mb-signalBox-column{
+  
+  margin-left: 10px;
+}
 .mb-signalBox-column2 {
   width: 50%;
   row-gap: 1vh;
@@ -101,12 +105,12 @@
   line-height: 16px;
   letter-spacing: 0.02em;
   color: #313D4C;
-  width: 100px;
-  margin-left: 10px;
+  width: 100%;
+  
 }
 
 .mb-signalBox-column .date {
-  width: 100px;
+  width: 100%;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
