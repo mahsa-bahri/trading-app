@@ -31,6 +31,13 @@ export default function MobileBuyStrategy() {
   });
   let name = 'classic name1';
   let author = 'john copper';
+  const handleClose =(e)=>{
+    e.preventDefault();
+    const id = e.currentTarget.id;
+    if(id=='closeMoreInfo'){
+      setMoreInfo(false);
+    }
+  }
   const handleClick = (e) => {
     e.preventDefault();
     const id = e.currentTarget.id;
@@ -52,7 +59,7 @@ export default function MobileBuyStrategy() {
         }
       })
     } else if (id == 'moreInfo' || id == 'lessInfo') {
-      setMoreInfo(!moreInfo);
+      setMoreInfo(true);
     }
   }
   const note = "  In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.In publishing and graphic design.";
@@ -150,7 +157,8 @@ export default function MobileBuyStrategy() {
             <h1 >{name}</h1>
             <h4>{author}</h4>
           </div>
-          <div className="mb-buyStrategy-grey-content">
+          <div className="mb-buyStrategy-grey-content ">
+            <div className="black-line" onClick={handleClose} id='closeMoreInfo'></div>
             <div className="mb-moreSignal-title-row">
               <h4>signal chart</h4>
               <img
