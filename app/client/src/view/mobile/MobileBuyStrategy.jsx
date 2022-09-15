@@ -31,16 +31,21 @@ export default function MobileBuyStrategy() {
   });
   let name = 'classic name1';
   let author = 'john copper';
-  const handleClose =(e)=>{
+  let wrapperRef = React.createRef();
+  const handleClose = (e) => {
     e.preventDefault();
+
+
     const id = e.currentTarget.id;
-    if(id=='closeMoreInfo'){
+    if (id == 'closeMoreInfo') {
       setMoreInfo(false);
     }
   }
   const handleClick = (e) => {
     e.preventDefault();
     const id = e.currentTarget.id;
+    let wrapper = wrapperRef.current;
+    wrapper.classList.toggle('is-moreInfo-open');
     if (id == 'moreBacktest' || id == 'lessBacktest') {
       setMoreBackTest(!moreBackTest);
     } else if (id == 'watchlist' || id == 'filter'
@@ -63,130 +68,122 @@ export default function MobileBuyStrategy() {
     }
   }
   const note = "  In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.In publishing and graphic design.";
-  if (!moreInfo) {
-    return (
-      <div className="tradino">
-        <div className="mb-buyStrategy-content">
-          <div className="mb-buyStrategy-green-title-content">
-            <h1 >{name}</h1>
-            <h4>{author}</h4>
-          </div>
-          <div className="mb-buyStrategy-grey-content">
-            <h4>Backtest on</h4>
-            <div className="mb-buyStrategy-backtest">
+  //        <div className={!moreInfo?"mb-buyStrategy-green-title-content":"mb-buyStrategy-green-title-content blur"}>
+
+  return (
+    <div className="tradino">
+      <div className="mb-buyStrategy-content">
+        <div className={!moreInfo ? "mb-buyStrategy-green-title-content" : "mb-buyStrategy-green-title-content blur"}>
+          <h1 >{name}</h1>
+          <h4>{author}</h4>
+        </div>
+        <div className={!moreInfo ? "mb-buyStrategy-grey-content" : "hidden"}>
+          <h4>Backtest on</h4>
+          <div className="mb-buyStrategy-backtest">
+            <MobileBackTestOn
+              hasIcon={true}
+              bigImg={us}
+              smallImg={japan}
+              moreBackTest={moreBackTest}
+              handleClick={handleClick} />
+            {moreBackTest && <><div className="line"></div>
               <MobileBackTestOn
-                hasIcon={true}
                 bigImg={us}
                 smallImg={japan}
                 moreBackTest={moreBackTest}
                 handleClick={handleClick} />
-              {moreBackTest && <><div className="line"></div>
-                <MobileBackTestOn
-                  bigImg={us}
-                  smallImg={japan}
-                  moreBackTest={moreBackTest}
-                  handleClick={handleClick} />
-                <div className="line"></div>
-                <MobileButton className={'mb-small-green-btn'} name={'create new backteat'} />
-              </>
-              }
-            </div>
-            <h4>Money trend</h4>
-            <div className="mb-buyStrategy-moneyTrend">
-              <img className='mb-info-icon-moneyTrend'
-                aria-label="info"
-                src={info} />
+              <div className="line"></div>
+              <MobileButton className={'mb-small-green-btn'} name={'create new backteat'} />
+            </>
+            }
+          </div>
+          <h4>Money trend</h4>
+          <div className="mb-buyStrategy-moneyTrend">
+            <img className='mb-info-icon-moneyTrend'
+              aria-label="info"
+              src={info} />
 
-              <img className="image" src={chart1} />
+            <img className="image" src={chart1} />
+          </div>
+          <h4>Backtest info</h4>
+          <div className="mb-buyStrategy-backtestInfo">
+            <MobileBackTestInfo moreInfo={moreInfo} />
+            {!moreInfo ? <div>
+              <p style={{ fontSize: '13px' }}>more</p>
+              <img
+                aria-label="more"
+                id='moreInfo'
+                onClick={handleClick}
+                src={more} />
+            </div> : <div>
+              <img
+                aria-label="less"
+                id='lessInfo'
+                onClick={handleClick}
+                src={less} />
+              <p style={{ fontSize: '13px' }}>less</p>
             </div>
-            <h4>Backtest info</h4>
-            <div className="mb-buyStrategy-backtestInfo">
-              <MobileBackTestInfo moreInfo={moreInfo} />
+            }
+          </div>
+          <div className="mb-buyStrategy-note">
+            <span>more frome creator</span>
+            <p>{note}</p>
+          </div>
+          <div className="mb-buyStrategy-big-line"></div>
+          <MobileButton className={'mb-big-green-btn'} name={'Buy strategy now'} />
+          <div className="mb-buyStrategy-title-row">
+            <h4>closed signals</h4>
+            <Link to={applicant.mobileMoreSignal}><h5>more</h5></Link>
+          </div>
+          <div className="mb-buyStrategy-closedSignals">
+            <MobileSignalBox bigImg={us} smallImg={japan} />
+            <MobileSignalBox bigImg={us} smallImg={japan} />
+          </div>
+          <div className="mb-buyStrategy-title-row">
+            <h4>live signals</h4>
+            <Link to={applicant.mobileMoreSignal}><h5>more</h5></Link>
+          </div>
+          <div className="mb-buyStrategy-closedSignals blur">
+            <MobileSignalBox bigImg={us} smallImg={japan} isLive={true} />
+            <MobileSignalBox bigImg={us} smallImg={japan} isLive={true} />
+          </div>
+          <div className="mb-general-bottom-space"></div>
+        </div>
 
 
-              {!moreInfo ? <div>
-                <p style={{ fontSize: '13px' }}>more</p>
-                <img
-                  aria-label="more"
-                  id='moreInfo'
-                  onClick={handleClick}
-                  src={more} />
-              </div> : <div>
-                <img
-                  aria-label="less"
-                  id='lessInfo'
-                  onClick={handleClick}
-                  src={less} />
-                <p style={{ fontSize: '13px' }}>less</p>
-              </div>
-              }
-            </div>
-            <div className="mb-buyStrategy-note">
-              <span>more frome creator</span>
-              <p>{note}</p>
-            </div>
-            <div className="mb-buyStrategy-big-line"></div>
-            <MobileButton className={'mb-big-green-btn'} name={'Buy strategy now'} />
-            <div className="mb-buyStrategy-title-row">
-              <h4>closed signals</h4>
-              <Link to={applicant.mobileMoreSignal}><h5>more</h5></Link>
-            </div>
-            <div className="mb-buyStrategy-closedSignals">
-              <MobileSignalBox bigImg={us} smallImg={japan} />
-              <MobileSignalBox bigImg={us} smallImg={japan} />
-            </div>
-            <div className="mb-buyStrategy-title-row">
-              <h4>live signals</h4>
-              <Link to={applicant.mobileMoreSignal}><h5>more</h5></Link>
-            </div>
-            <div className="mb-buyStrategy-closedSignals blur">
-              <MobileSignalBox bigImg={us} smallImg={japan} isLive={true} />
-              <MobileSignalBox bigImg={us} smallImg={japan} isLive={true} />
-            </div>
-            <div className="mb-general-bottom-space"></div>
+
+        <div ref={wrapperRef} className="mb-buyStrategy-moreInfo-grey-content">
+          <div className="black-line" onClick={handleClose} id='closeMoreInfo'></div>
+          <div className="mb-moreSignal-title-row">
+            <h4>signal chart</h4>
+            <img
+              aria-label="info"
+              src={info} />
+          </div>
+          <div className="mb-buyStrategy-signalChart">
+            <img src={chart3} />
+          </div>
+          <div className="mb-moreSignal-title-row">
+            <h4>sample signal </h4>
+            <img
+              aria-label="info"
+              src={info} />
+          </div>
+          <MobileSignalSample profit={11} loss={8} />
+          <div className="mb-moreSignal-title-row">
+            <h4>Backtest info </h4>
+            <img
+              aria-label="info"
+              src={info} />
+          </div>
+          <div className="mb-buyStrategy-backtestInfo">
+            <MobileBackTestInfo moreInfo={moreInfo} />
           </div>
         </div>
-        <MobileBottomNav navChoose={navChoose} handleClick={handleClick} />
+
       </div>
-    );
-  } else {
-    return (
-      <div className="tradino">
-        <div className="mb-buyStrategy-content">
-          <div className="mb-buyStrategy-green-title-content blur">
-            <h1 >{name}</h1>
-            <h4>{author}</h4>
-          </div>
-          <div className="mb-buyStrategy-grey-content ">
-            <div className="black-line" onClick={handleClose} id='closeMoreInfo'></div>
-            <div className="mb-moreSignal-title-row">
-              <h4>signal chart</h4>
-              <img
-                aria-label="info"
-                src={info} />
-            </div>
-            <div className="mb-buyStrategy-signalChart">
-              <img src={chart3} />
-            </div>
-            <div className="mb-moreSignal-title-row">
-              <h4>sample signal </h4>
-              <img
-                aria-label="info"
-                src={info} />
-            </div>
-            <MobileSignalSample profit={11} loss={8}/>
-            <div className="mb-moreSignal-title-row">
-              <h4>Backtest info </h4>
-              <img
-                aria-label="info"
-                src={info} />
-            </div>
-            <div className="mb-buyStrategy-backtestInfo">
-              <MobileBackTestInfo moreInfo={moreInfo} />
-            </div>
-          </div>
-        </div>
-        <div />
-      </div>);
-  }
+      <MobileBottomNav navChoose={navChoose} handleClick={handleClick} />
+    </div>
+  );
+
 }

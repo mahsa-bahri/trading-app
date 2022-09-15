@@ -666,7 +666,8 @@
 }
 
 .mb-buyStrategy-grey-content,
-.mb-moreSignal-grey-content {
+.mb-moreSignal-grey-content,
+.mb-buyStrategy-moreInfo-grey-content {
   width: 100vw;
   background: #F7F7F7;
   border-radius: 40px 40px 0px 0px;
@@ -679,7 +680,26 @@
   padding-top: 20px;
 }
 
-.mb-buyStrategy-grey-content h4 {
+.hidden {
+  display: none;
+}
+
+.mb-buyStrategy-moreInfo-grey-content {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  margin: 0 0 -200vh 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease;
+}
+
+.is-moreInfo-open {
+  margin-bottom: 0;
+}
+
+.mb-buyStrategy-grey-content h4,
+.mb-buyStrategy-moreInfo-grey-content h4 {
   margin-top: 20px;
   width: 85vw;
 }
@@ -834,12 +854,17 @@ body {
 .mb-general-bottom-space {
   height: 170px;
 }
-.mb-buyStrategy-grey-content .black-line{
+
+ .black {
   background-color: #313D4C;
-  width: 30%;
-  height: 5px;
+  align-self: center;
+  justify-self: flex-start;
+  width: 3000px;
+  height: 50px;
+  z-index: 10;
   border-radius: 3px;
 }
+
 .mb-buyStrategy-big-line {
   background-color: rgb(217, 214, 214);
   width: 100%;
